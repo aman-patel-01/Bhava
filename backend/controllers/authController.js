@@ -1,0 +1,95 @@
+import jwt from "jsonwebtoken";
+import User from "../models/User.js";
+
+const signToken = (id) => {
+  return jwt.sign({ id }, process.env.JWT_SECRET, {
+    expiresIn: process.env.JWT_EXPIRES_IN || "7d",
+  });
+};
+
+const sendResponse = (res, statusCode, user, message) => {
+  const token = signToken(user._id);
+  res.status(statusCode).json({
+    success: true,
+    message,
+    token,
+    user: {
+      id: user._id,
+      name: user.name,
+      email: user.email,
+      provider: user.provider,
+      avatar: user.avatar,
+      createdAt: user.createdAt,
+    },
+  });
+};
+
+// POST /api/auth/signup
+export const signup = async (req, res) => {
+  try {
+    const { name, email, password } = req.body;
+
+    if (!name || !email || !password) {
+      return res.status(400).json({
+        success: false,
+        message: "Please provide name, email, and password",
+      });
+    }
+
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(409).json({
+        success: false,
+        message: "An account with this email already exists",
+      });
+    }
+
+    const user = await User.create({ name, email, password, provider: "email" });
+    sendResponse(res, 201, user, "Account created successfully");
+  } catch (err) {
+    if (err.name === "ValidationError") {
+      const messages = Object.values(err.errors).map((e) => e.message);
+      return res.status(400).json({ success: false, message: messages[0] });
+    }
+    res.status(500).json({ success: false, message: "Server error. Please try again." });
+  }
+};
+
+// POST /api/auth/login
+export const login = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    if (!email || !password) {
+      return res.status(400).json({
+        success: false,
+        message: "Please provide email and password",
+      });
+    }
+
+    const user = await User.findOne({ email }).select("+password");
+    if (!user || !(await user.comparePassword(password))) {
+      return res.status(401).json({
+        success: false,
+        message: "Invalid email or password",
+      });
+    }
+
+    sendResponse(res, 200, user, "Logged in successfully");
+  } catch (err) {
+    res.status(500).json({ success: false, message: "Server error. Please try again." });
+  }
+};
+
+// GET /api/auth/me  (protected)
+export const getMe = async (req, res) => {
+  try {
+    const user = await User.findById(req.userId);
+    if (!user) {
+      return res.status(404).json({ success: false, message: "User not found" });
+    }
+    res.status(200).json({ success: true, user });
+  } catch (err) {
+    res.status(500).json({ success: false, message: "Server error" });
+  }
+};

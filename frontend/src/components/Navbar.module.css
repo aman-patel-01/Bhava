@@ -1,0 +1,190 @@
+.navbarContainer {
+  background-color: #f8edde;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.col3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.col9 {
+  flex: 0 0 75%;
+  max-width: 75%;
+}
+
+.brandContainer {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.heading {
+  color: #2d4a3a;
+  font-weight: 700;
+  font-size: 24px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Neue Haas Grotesk', Inter, sans-serif;
+  line-height: 1;
+}
+
+.dotsBhava {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+.dotName {
+  width: 6px;
+  height: 6px;
+  background-color: #d57f45;
+  border-radius: 50%;
+  display: block;
+}
+
+.betaTag {
+  font-size: 11px;
+  font-weight: 500;
+  color: #d57f45;
+  letter-spacing: 0.5px;
+  margin-left: 2px;
+  font-family: 'Neue Haas Grotesk', Inter, sans-serif;
+}
+
+.nav {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  justify-content: flex-end !important;
+  align-items: center;
+}
+
+.navItem {
+  list-style: none;
+  margin: 0;
+}
+
+.navLink {
+  text-decoration: none !important;
+  color: #666 !important;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 8px 15px !important;
+  transition: color 0.3s;
+  font-family: 'Neue Haas Grotesk', Inter, sans-serif;
+  text-decoration: none;
+}
+
+.navLink:hover {
+  color: #333 !important;
+}
+
+.btnGetStarted {
+  background: transparent;
+  color: #e07b39;
+  border: 2px solid #e07b39;
+  padding: 8px 23px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-left: 10px;
+  font-family: 'Neue Haas Grotesk', Inter, sans-serif;
+  box-shadow: 0 3px 10px rgba(224, 123, 57, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.btnGetStarted::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(135deg, #e07b39 0%, #d06b29 100%);
+  transition: width 0.4s ease;
+  z-index: -1;
+}
+
+.btnGetStarted:hover::before {
+  width: 100%;
+}
+
+.btnGetStarted:hover {
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(224, 123, 57, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbarContainer {
+    padding: 10px 0;
+  }
+  
+  .heading {
+    font-size: 20px;
+  }
+  
+  .logo {
+    height: 32px;
+  }
+  
+  .dotName {
+    width: 7px;
+    height: 7px;
+  }
+  
+  .dotsBhava {
+    gap: 3px;
+  }
+}
+
+/* Active link style with underline */
+.navLinkActive {
+  color: #333 !important;
+  font-weight: 600 !important;
+  position: relative;
+}
+
+.navLinkActive::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 15px;
+  right: 15px;
+  height: 2px;
+  background: #e07b39;
+  border-radius: 2px;
+}

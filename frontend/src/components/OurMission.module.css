@@ -1,0 +1,145 @@
+.ourMissionSection {
+  background-color: #2d4a3a;
+  padding: 60px 0;
+  color: white;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 80px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.missionContent {
+  flex: 1;
+  padding-right: 60px;
+}
+
+.missionTitle {
+  font-size: 48px;
+  font-weight: 700;
+  color: #d4af6a;
+  margin-bottom: 28px;
+  font-family: 'Neue Haas Grotesk', Inter, sans-serif;
+  line-height: 1.1; /* Tighter line height for single line */
+  white-space: nowrap; /* Prevents line breaking */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.missionText {
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 20px;
+  font-family: 'Neue Haas Grotesk', Inter, sans-serif;
+}
+
+.missionText strong {
+  font-weight: 700;
+}
+
+.missionImage {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 60px;
+}
+
+.missionImage img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 60px;
+  }
+
+  .missionContent {
+    padding-right: 40px;
+  }
+
+  .missionImage {
+    padding-left: 40px;
+  }
+}
+
+@media (max-width: 991px) {
+  .container {
+    padding: 0 40px;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .missionContent {
+    padding-right: 20px;
+    margin-bottom: 0;
+  }
+
+  .missionImage {
+    padding-left: 20px;
+  }
+
+  .missionTitle {
+    font-size: 40px;
+    margin-bottom: 24px;
+    line-height: 1.1;
+    white-space: nowrap;
+  }
+
+  .missionText {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ourMissionSection {
+    padding: 40px 0;
+  }
+
+  .container {
+    padding: 0 30px;
+  }
+
+  .missionContent {
+    padding-right: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .missionImage {
+    padding-left: 15px;
+  }
+
+  .missionTitle {
+    font-size: 36px;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    white-space: normal; /* Allow wrapping on mobile */
+  }
+
+  .missionText {
+    font-size: 14px;
+    margin-bottom: 18px;
+  }
+
+  .missionImage img {
+    max-width: 100%;
+  }
+}
