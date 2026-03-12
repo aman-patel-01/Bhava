@@ -30,6 +30,7 @@ const shlokas = [
 
 function GitaSlider() {
   const [current, setCurrent] = useState(0);
+  const [copied, setCopied] = useState(false);
 
   const goNext = () => {
     if (current < shlokas.length - 1) setCurrent(current + 1);
@@ -37,6 +38,18 @@ function GitaSlider() {
 
   const goPrev = () => {
     if (current > 0) setCurrent(current - 1);
+  };
+
+  const handleShare = async () => {
+    const shloka = shlokas[current];
+    const text = `"${shloka.text}" — ${shloka.ref}`;
+    if (navigator.share) {
+      await navigator.share({ text });
+    } else {
+      navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
   };
 
   return (
@@ -60,6 +73,24 @@ function GitaSlider() {
           <p className={styles.quoteText}>{shlokas[current].text}</p>
           <div className={styles.quoteDivider} />
           <span className={styles.quoteRef}>{shlokas[current].ref}</span>
+          <button
+            className={styles.shareBtn}
+            onClick={handleShare}
+            aria-label="Share quote"
+            title={copied ? "Copied!" : "Share"}
+          >
+            {copied ? (
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            ) : (
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+                <polyline points="16 6 12 2 8 6" />
+                <line x1="12" y1="2" x2="12" y2="15" />
+              </svg>
+            )}
+          </button>
         </div>
 
         {/* Left arrow — absolute at left edge */}

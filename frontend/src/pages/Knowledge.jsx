@@ -109,7 +109,7 @@ function Knowledge() {
       {/* ── Hero Section ── */}
       <div className={styles.knowledgeHeroesSection}>
         <div className={styles.heroesBackgroundsLayer}>
-          <img src="./temple(4).jpeg" alt="Temple Background" className={styles.heroesBgImages} />
+          <img src="/bhakti.png" alt="Temple Background" className={styles.heroesBgImages} />
           <div className={styles.heroesBgBlurEdge} />
         </div>
         <div className={styles.knowledgeContainersMain}>

@@ -1,242 +1,308 @@
 /* ============================================
-   BHAVA — 21-DAY DHYAN CHALLENGE PAGE
+   BHAVA — 21-DAY DHYAN CHALLENGE
+   Two-panel layout matching 108-Day design
    ============================================ */
 
 .page {
   background: #F4EFE6;
-  font-family: 'Neue Haas Grotesk', Inter, sans-serif;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', 'Work Sans', sans-serif;
 }
 
+/* ── Split layout ── */
+.layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  align-items: stretch;
+}
+
+/* ══════════════════════════════
+   LEFT PANEL — cream
+   ══════════════════════════════ */
+.leftPanel {
+  flex: 0 0 380px;
+  width: 380px;
+  background: #F4EFE6;
+  padding: 56px 40px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.title {
+  font-family: 'Work Sans', 'Inter', sans-serif;
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #2A1845;
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* ── Image card ── */
+.imageCard {
+  border-radius: 16px;
+  overflow: hidden;
+  background: #2A1845;
+  position: relative;
+}
+
+.progressRow {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 2;
+}
+
+.progressLabel {
+  font-size: 0.72rem;
+  color: #fff;
+  font-weight: 500;
+  white-space: nowrap;
+  font-family: 'Inter', sans-serif;
+}
+
+.progressTrack {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  width: 15%;
+  background: #C6A14A;
+  border-radius: 99px;
+}
+
+.heroImg {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Controls ── */
+.controls {
+  display: flex;
+  gap: 36px;
+  justify-content: center;
+  background: #1B0F30;
+  border-radius: 14px;
+  padding: 18px 24px;
+}
+
+.controlBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  padding: 0;
+}
+
+.controlBtn .material-symbols-outlined {
+  font-size: 28px;
+  color: #fff;
+}
+
+.controlLabel {
+  font-size: 0.72rem;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+
+/* ── Description ── */
+.description {
+  font-size: 0.87rem;
+  color: #2A1845;
+  line-height: 1.7;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ══════════════════════════════
+   RIGHT PANEL — dark purple
+   ══════════════════════════════ */
+.rightPanel {
+  flex: 1;
+  background: #2A1845;
+  padding: 52px 80px 56px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sessionsCount {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 40px;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.3px;
+}
+
+/* ── Single session block ── */
+.sessionBlock {
+  padding: 32px 0;
+  border-bottom: none;
+}
+
+.sessionBlock:first-of-type {
+  padding-top: 0;
+}
+
+.sessionBlock:last-child {
+  padding-bottom: 0;
+}
+
+.phaseHeader {
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 16px;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.2px;
+}
+
+.sessionRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.sessionNumber {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.55);
+  flex-shrink: 0;
+  padding-top: 3px;
+  min-width: 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.sessionContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sessionTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.3;
+}
+
+.sessionDesc {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.65;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.duration {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+/* ── Play circle button ── */
+.playCircle {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.65);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  margin-top: 4px;
+  align-self: flex-start;
+}
+
+.playCircle:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: #fff;
+}
+
+.playCircle .material-symbols-outlined {
+  font-size: 24px;
+  color: #fff;
+}
+
+/* ══════════════════════════════
+   SHARED SECTION STYLES
+   ══════════════════════════════ */
 .container {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 60px;
 }
 
-/* ── Shared Typography ── */
 .eyebrowCenter {
   font-size: 10px;
   letter-spacing: 3.5px;
   text-transform: uppercase;
   color: #7B5EA7;
   font-weight: 600;
-  margin-bottom: 12px;
-  font-family: 'Neue Haas Grotesk', Inter, sans-serif;
+  margin: 0 0 12px;
+  font-family: 'Inter', sans-serif;
   text-align: center;
 }
 
 .sectionTitle {
-  font-family: 'Canela', Cormorant, serif;
-  font-size: 2.4rem;
-  font-weight: 700;
-  color: #1E3A2F;
+  font-family: 'Work Sans', 'Inter', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #1E1E1E;
   text-align: center;
-  margin-bottom: 12px;
-  letter-spacing: -0.3px;
+  margin: 0 0 12px;
 }
 
 .sectionSubtitle {
-  font-size: 0.97rem;
+  font-size: 0.95rem;
   color: #6A625A;
   text-align: center;
   line-height: 1.7;
-  margin-bottom: 48px;
-  font-family: 'Canela', Cormorant, serif;
-  font-style: italic;
+  margin: 0 auto 48px;
+  max-width: 580px;
+  font-family: 'Inter', sans-serif;
 }
 
-.purple {
+.accent {
   color: #7B5EA7;
 }
 
-/* ── Hero ── */
-.hero {
-  position: relative;
-  background: linear-gradient(135deg, #2A1845 0%, #422868 55%, #1B0F30 100%);
-  min-height: 560px;
-  overflow: hidden;
-}
-
-.heroOverlay {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(198, 161, 74, 0.06) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 60% at 10% 70%, rgba(122, 31, 37, 0.1) 0%, transparent 60%);
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Split layout: text left, image right */
-.heroSplit {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  min-height: 560px;
-}
-
-.heroLeft {
-  flex: 0 0 50%;
-  max-width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 80px 52px 80px 80px;
-  position: relative;
-  z-index: 2;
-}
-
-.heroRight {
-  flex: 0 0 50%;
-  max-width: 50%;
-  position: relative;
-  overflow: hidden;
-  background-color: #422868;
-}
-
-.heroImage {
-  position: absolute;
-  top: -15%;
-  left: -15%;
-  width: 130%;
-  height: 130%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
-
-.heroImageOverlay {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.heroEyebrow {
-  font-size: 10px;
-  letter-spacing: 3.5px;
-  text-transform: uppercase;
-  color: rgba(198, 161, 74, 0.8);
-  font-weight: 600;
-  margin-bottom: 20px;
-  font-family: 'Neue Haas Grotesk', Inter, sans-serif;
-}
-
-.heroTitle {
-  font-family: 'Canela', Cormorant, serif;
-  font-size: 4.5rem;
-  font-weight: 800;
-  color: #F7F3EC;
-  line-height: 1.1;
-  margin-bottom: 20px;
-  letter-spacing: -1px;
-}
-
-.heroSubtitle {
-  font-size: 1.1rem;
-  color: rgba(247, 243, 236, 0.72);
-  line-height: 1.7;
-  margin-bottom: 32px;
-  font-family: 'Canela', Cormorant, serif;
-}
-
-.heroSubtitle em {
-  color: #C6A14A;
-  font-style: italic;
-}
-
-.heroMeta {
-  display: flex;
-  gap: 28px;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  margin-bottom: 36px;
-}
-
-.heroMetaItem {
-  font-size: 0.88rem;
-  color: rgba(247, 243, 236, 0.65);
-  font-family: 'Neue Haas Grotesk', Inter, sans-serif;
-  letter-spacing: 0.3px;
-}
-
-.btnJoinHero {
-  background: linear-gradient(135deg, #C6A14A 0%, #A8853A 100%);
-  color: #0F1413;
-  border: none;
-  padding: 10px 24px;
-  border-radius: 999px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  cursor: pointer;
-  font-family: 'Neue Haas Grotesk', Inter, sans-serif;
-  letter-spacing: 0.3px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 16px rgba(198, 161, 74, 0.25);
-  width: fit-content;
-  align-self: flex-start;
-}
-
-.btnJoinHero:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
-}
-
-/* ── Phases ── */
-.phasesSection {
-  background: #F4EFE6;
-  padding: 72px 20px;
-  border-top: 1px solid rgba(198, 161, 74, 0.15);
-}
-
-.phasesGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 8px;
-}
-
-.phaseCard {
-  background: #FEFCF8;
-  border-radius: 16px;
-  padding: 28px 24px;
-  border: 1px solid rgba(198, 161, 74, 0.12);
-  box-shadow: 0 2px 10px rgba(30, 58, 47, 0.04);
-}
-
-.phaseDays {
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  font-family: 'Neue Haas Grotesk', Inter, sans-serif;
-  text-transform: uppercase;
-  display: block;
-  margin-bottom: 8px;
-}
-
-.phaseTitle {
-  font-family: 'Canela', Cormorant, serif;
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #1E3A2F;
-  margin-bottom: 10px;
-}
-
-.phaseDesc {
-  font-size: 0.92rem;
-  color: #6A625A;
-  line-height: 1.65;
-  font-family: 'Canela', Cormorant, serif;
-}
-
-/* ── Schedule ── */
+/* ══════════════════════════════
+   21-DAY SCHEDULE SECTION
+   ══════════════════════════════ */
 .scheduleSection {
-  background: #f5f1e8;
+  background: #EEE9DF;
   padding: 72px 20px;
-  border-top: 1px solid rgba(198, 161, 74, 0.12);
+  border-top: 1px solid rgba(66, 40, 104, 0.1);
 }
 
 .daysList {
@@ -248,13 +314,13 @@
 .dayRow {
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid rgba(198, 161, 74, 0.12);
+  border: 1px solid rgba(66, 40, 104, 0.12);
   background: #FEFCF8;
   transition: box-shadow 0.25s ease;
 }
 
 .dayRowOpen {
-  box-shadow: 0 4px 20px rgba(66, 40, 104, 0.1);
+  box-shadow: 0 4px 20px rgba(66, 40, 104, 0.12);
 }
 
 .dayHeader {
@@ -284,7 +350,7 @@
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.5px;
-  font-family: 'Neue Haas Grotesk', Inter, sans-serif;
+  font-family: 'Inter', sans-serif;
   text-align: center;
 }
 
@@ -292,14 +358,14 @@
   flex: 1;
   font-size: 0.97rem;
   font-weight: 600;
-  color: #1E3A2F;
-  font-family: 'Neue Haas Grotesk', Inter, sans-serif;
+  color: #1E1E1E;
+  font-family: 'Inter', sans-serif;
 }
 
 .dayPhase {
   font-size: 0.75rem;
   color: #9A8F8A;
-  font-family: 'Neue Haas Grotesk', Inter, sans-serif;
+  font-family: 'Inter', sans-serif;
   width: 80px;
   flex-shrink: 0;
 }
@@ -307,7 +373,7 @@
 .dayMantraPreview {
   font-size: 0.82rem;
   color: #7B5EA7;
-  font-family: 'Canela', Cormorant, serif;
+  font-family: 'Inter', sans-serif;
   font-style: italic;
   flex: 0 0 220px;
   overflow: hidden;
@@ -324,7 +390,7 @@
 }
 
 .dayBody {
-  border-top: 1px solid rgba(198, 161, 74, 0.1);
+  border-top: 1px solid rgba(66, 40, 104, 0.08);
   padding: 20px 20px 24px;
   background: rgba(66, 40, 104, 0.02);
 }
@@ -342,7 +408,7 @@
   color: #9A8F8A;
   font-weight: 600;
   margin-bottom: 12px;
-  font-family: 'Neue Haas Grotesk', Inter, sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .practiceList {
@@ -357,7 +423,7 @@
 .practiceList li {
   font-size: 0.9rem;
   color: #3d4a42;
-  font-family: 'Canela', Cormorant, serif;
+  font-family: 'Inter', sans-serif;
   padding-left: 14px;
   position: relative;
   line-height: 1.5;
@@ -374,8 +440,8 @@
 }
 
 .mantraText {
-  font-family: 'Canela', Cormorant, serif;
-  font-size: 1.2rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
   font-weight: 600;
   color: #422868;
   margin-bottom: 6px;
@@ -385,16 +451,18 @@
 .mantraNote {
   font-size: 0.85rem;
   color: #6A625A;
-  font-family: 'Canela', Cormorant, serif;
+  font-family: 'Inter', sans-serif;
   font-style: italic;
   line-height: 1.55;
 }
 
-/* ── Music Section ── */
+/* ══════════════════════════════
+   MUSIC SECTION
+   ══════════════════════════════ */
 .musicSection {
   background: #F4EFE6;
   padding: 72px 20px;
-  border-top: 1px solid rgba(198, 161, 74, 0.12);
+  border-top: 1px solid rgba(66, 40, 104, 0.08);
 }
 
 .musicLayersGrid {
@@ -405,11 +473,11 @@
 }
 
 .musicLayerCard {
-  background: #FEFCF8;
+  background: #fff;
   border-radius: 14px;
   padding: 24px 20px;
-  border: 1px solid rgba(198, 161, 74, 0.12);
-  box-shadow: 0 2px 8px rgba(30, 58, 47, 0.03);
+  border: 1px solid rgba(66, 40, 104, 0.08);
+  box-shadow: 0 2px 8px rgba(30, 30, 30, 0.04);
 }
 
 .musicLayerNum {
@@ -420,14 +488,14 @@
   font-weight: 700;
   display: block;
   margin-bottom: 8px;
-  font-family: 'Neue Haas Grotesk', Inter, sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .musicLayerTitle {
-  font-family: 'Canela', Cormorant, serif;
-  font-size: 1.15rem;
+  font-family: 'Work Sans', 'Inter', sans-serif;
+  font-size: 1.05rem;
   font-weight: 700;
-  color: #1E3A2F;
+  color: #1E1E1E;
   margin-bottom: 10px;
 }
 
@@ -438,24 +506,25 @@
 }
 
 .musicLayerDesc {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: #6A625A;
   line-height: 1.65;
-  font-family: 'Canela', Cormorant, serif;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
 }
 
 .musicPhaseGuide {
-  background: #FEFCF8;
+  background: #fff;
   border-radius: 16px;
   padding: 32px 28px;
-  border: 1px solid rgba(198, 161, 74, 0.12);
+  border: 1px solid rgba(66, 40, 104, 0.08);
 }
 
 .musicPhaseHeading {
-  font-family: 'Canela', Cormorant, serif;
-  font-size: 1.25rem;
+  font-family: 'Work Sans', 'Inter', sans-serif;
+  font-size: 1.1rem;
   font-weight: 700;
-  color: #1E3A2F;
+  color: #1E1E1E;
   margin-bottom: 20px;
 }
 
@@ -478,14 +547,14 @@
 .musicPhaseName {
   font-size: 0.85rem;
   font-weight: 600;
-  font-family: 'Neue Haas Grotesk', Inter, sans-serif;
+  font-family: 'Inter', sans-serif;
   min-width: 200px;
 }
 
 .musicPhaseRec {
   font-size: 0.9rem;
   color: #6A625A;
-  font-family: 'Canela', Cormorant, serif;
+  font-family: 'Inter', sans-serif;
   margin: 0;
   font-style: italic;
 }
@@ -493,17 +562,19 @@
 .musicNote {
   font-size: 0.85rem;
   color: #9A8F8A;
-  font-family: 'Canela', Cormorant, serif;
+  font-family: 'Inter', sans-serif;
   font-style: italic;
   margin: 0;
   line-height: 1.6;
 }
 
-/* ── Completion / Benefits ── */
+/* ══════════════════════════════
+   COMPLETION / BENEFITS
+   ══════════════════════════════ */
 .completionSection {
-  background: #f5f1e8;
+  background: #EEE9DF;
   padding: 72px 20px;
-  border-top: 1px solid rgba(198, 161, 74, 0.12);
+  border-top: 1px solid rgba(66, 40, 104, 0.08);
 }
 
 .benefitsGrid {
@@ -513,42 +584,39 @@
 }
 
 .benefitCard {
-  background: #FEFCF8;
+  background: #fff;
   border-radius: 14px;
-  padding: 24px 16px;
+  padding: 28px 18px;
   text-align: center;
-  border: 1px solid rgba(198, 161, 74, 0.12);
-  box-shadow: 0 2px 8px rgba(30, 58, 47, 0.03);
-  transition: transform 0.3s ease;
+  border: 1px solid rgba(66, 40, 104, 0.08);
+  box-shadow: 0 2px 8px rgba(30, 30, 30, 0.04);
+  transition: transform 0.25s ease;
 }
 
 .benefitCard:hover {
   transform: translateY(-4px);
 }
 
-.benefitIcon {
-  font-size: 2rem;
-  display: block;
-  margin-bottom: 12px;
-}
-
 .benefitTitle {
-  font-family: 'Canela', Cormorant, serif;
-  font-size: 1rem;
+  font-family: 'Work Sans', 'Inter', sans-serif;
+  font-size: 0.97rem;
   font-weight: 700;
-  color: #1E3A2F;
-  margin-bottom: 8px;
+  color: #1E1E1E;
+  margin: 0 0 8px;
   line-height: 1.3;
 }
 
 .benefitDesc {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: #6A625A;
-  line-height: 1.55;
-  font-family: 'Canela', Cormorant, serif;
+  line-height: 1.6;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
 }
 
-/* ── CTA ── */
+/* ══════════════════════════════
+   CTA
+   ══════════════════════════════ */
 .ctaSection {
   background: linear-gradient(135deg, #2A1845 0%, #422868 55%, #1B0F30 100%);
   padding: 72px 20px;
@@ -561,12 +629,11 @@
 }
 
 .ctaTitle {
-  font-family: 'Canela', Cormorant, serif;
+  font-family: 'Work Sans', 'Inter', sans-serif;
   font-size: 2.2rem;
-  font-weight: 700;
+  font-weight: 800;
   color: #F7F3EC;
   margin-bottom: 14px;
-  letter-spacing: -0.3px;
 }
 
 .ctaSubtext {
@@ -574,7 +641,7 @@
   color: rgba(247, 243, 236, 0.65);
   line-height: 1.7;
   margin-bottom: 36px;
-  font-family: 'Canela', Cormorant, serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .ctaButtons {
@@ -593,7 +660,7 @@
   font-size: 0.95rem;
   font-weight: 700;
   cursor: pointer;
-  font-family: 'Neue Haas Grotesk', Inter, sans-serif;
+  font-family: 'Inter', sans-serif;
   transition: all 0.3s ease;
   box-shadow: 0 4px 14px rgba(198, 161, 74, 0.25);
 }
@@ -612,7 +679,7 @@
   font-size: 0.95rem;
   font-weight: 500;
   cursor: pointer;
-  font-family: 'Neue Haas Grotesk', Inter, sans-serif;
+  font-family: 'Inter', sans-serif;
   transition: all 0.3s ease;
 }
 
@@ -621,111 +688,142 @@
   color: #C6A14A;
 }
 
-/* ── Responsive ── */
+/* ══════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════ */
 @media (max-width: 1024px) {
+  .leftPanel {
+    flex: 0 0 320px;
+    width: 320px;
+    padding: 44px 32px 40px;
+  }
+
+  .rightPanel {
+    padding: 44px 48px 48px;
+  }
+
   .container {
     padding: 0 40px;
   }
-  .heroLeft {
-    padding: 60px 36px 60px 60px;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    flex-direction: column;
   }
-  .heroTitle {
-    font-size: 3.5rem;
+
+  .leftPanel {
+    flex: none;
+    width: 100%;
+    padding: 36px 28px 32px;
   }
+
+  .rightPanel {
+    padding: 36px 28px 40px;
+  }
+
   .benefitsGrid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .musicLayersGrid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .container {
+    padding: 0 20px;
   }
 }
 
 @media (max-width: 768px) {
-  .container {
-    padding: 0 24px;
-  }
-  .heroSplit {
-    flex-direction: column;
-    min-height: auto;
-  }
-  .heroLeft {
-    flex: none;
-    max-width: 100%;
-    padding: 60px 28px 36px;
-  }
-  .heroRight {
-    flex: none;
-    max-width: 100%;
-    height: 280px;
-  }
-  .heroTitle {
-    font-size: 2.8rem;
-  }
-  .heroMeta {
-    justify-content: flex-start;
-  }
-  .phasesGrid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
   .dayHeader {
     flex-wrap: wrap;
     gap: 10px;
   }
+
   .dayMantraPreview {
     flex: 0 0 100%;
     white-space: normal;
     font-size: 0.8rem;
   }
+
   .dayPhase {
     width: auto;
   }
+
   .dayBodyGrid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  .musicLayersGrid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-  .benefitsGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+
   .sectionTitle {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .rightPanel {
+    padding: 28px 20px 36px;
+  }
+
+  .sessionBlock {
+    padding: 22px 0;
   }
 }
 
 @media (max-width: 480px) {
-  .heroTitle {
-    font-size: 2rem;
+  .title {
+    font-size: 1.3rem;
   }
-  .heroLeft {
-    padding: 48px 20px 28px;
+
+  .controls {
+    gap: 24px;
+    padding: 16px 20px;
   }
-  .heroRight {
-    height: 220px;
+
+  .rightPanel {
+    padding: 24px 16px 32px;
   }
-  .heroMeta {
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
+
+  .sessionsCount {
+    margin-bottom: 24px;
   }
+
+  .sessionBlock {
+    padding: 18px 0;
+  }
+
   .benefitsGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
+
+  .sectionTitle {
+    font-size: 1.6rem;
+  }
+
+  .ctaTitle {
+    font-size: 1.7rem;
+  }
+
   .ctaButtons {
     flex-direction: column;
     align-items: center;
   }
+
   .btnPrimary,
   .btnSecondary {
     width: 100%;
     max-width: 300px;
     text-align: center;
   }
+
   .musicPhaseCard {
     flex-direction: column;
     align-items: flex-start;
     gap: 6px;
   }
+
   .musicPhaseName {
     min-width: unset;
   }

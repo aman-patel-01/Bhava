@@ -1,415 +1,240 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./MantraSadhana108.module.css";
 
+const completionBenefits = [
+  {
+    title: "Unshakeable Discipline",
+    description:
+      "108 days of consistent practice forges a daily sadhana that becomes second nature.",
+  },
+  {
+    title: "Mental Clarity",
+    description:
+      "The mind becomes clearer, sharper, and no longer controlled by scattered thoughts.",
+  },
+  {
+    title: "Emotional Mastery",
+    description:
+      "Reactions soften. You observe feelings instead of being overtaken by them.",
+  },
+  {
+    title: "Spiritual Identity",
+    description:
+      "Mantra becomes part of who you are — a living, breathing devotion within.",
+  },
+  {
+    title: "Inner Stillness",
+    description:
+      "Sound becomes silence. Practice becomes presence. Stillness deepens permanently.",
+  },
+];
+
+const sacredFacts = [
+  {
+    label: "Mala & Japa Practice",
+    heading: "108 Beads, One Complete Round",
+    description:
+      "A traditional Japa Mala has 108 beads. When chanting any mantra, you complete 108 repetitions — one full round. The 109th bead, the Sumeru or Guru bead, is never crossed. You reverse direction instead, honoring the infinite cycle of devotion.",
+  },
+  {
+    label: "Astronomy & Cosmos",
+    heading: "The Universe Encoded in a Number",
+    description:
+      "The Sun's diameter is approximately 108 times the Earth's diameter. The distance from Earth to the Sun is approximately 108 times the Sun's diameter. The distance from Earth to the Moon is approximately 108 times the Moon's diameter. Ancient Vedic sages calculated this thousands of years ago — making 108 a cosmic number connecting Earth, Sun, and Moon.",
+  },
+  {
+    label: "Human Body & Chakras",
+    heading: "108 Channels of Vital Energy",
+    description:
+      "There are 108 nadis — energy channels — that converge at the heart chakra, Anahata. There are 108 marma points, vital pressure points in the body similar to acupressure. The Atman, the soul, is said to pass through 108 stages on its spiritual journey.",
+  },
+  {
+    label: "Sanskrit & Sacred Texts",
+    heading: "The Language of the Divine",
+    description:
+      "Sanskrit has 54 letters, each with masculine (Shiva) and feminine (Shakti) forms — 54 multiplied by 2 equals 108. The Rigveda is divided into 10,800 stanzas. There are 108 Upanishads, the sacred philosophical texts of Vedanta, and 108 names each for Vishnu, Shiva, Lakshmi, and Ganesha.",
+  },
+  {
+    label: "Tantra & Yoga",
+    heading: "Sacred Sites, Sacred Motion",
+    description:
+      "There are 108 sacred sites — Shakti Peethas — across India. Bharatanatyam, classical Indian dance, contains 108 forms of movement as listed in the Natya Shastra. In yoga, 108 Sun Salutations are performed on special occasions such as solstices and equinoxes.",
+  },
+  {
+    label: "Time & Astrology",
+    heading: "Written in the Stars",
+    description:
+      "In Vedic astrology, there are 12 zodiac signs and 9 planets — 12 multiplied by 9 equals 108. There are 27 Nakshatras, the lunar mansions, each divided into 4 Padas — 27 multiplied by 4 equals 108.",
+  },
+  {
+    label: "Across Traditions",
+    heading: "A Universal Sacred Number",
+    description:
+      "Beyond Hinduism, the significance of 108 resonates widely. In Buddhism, 108 bells are rung to mark the New Year and 108 defilements must be overcome. In Sikhism, 108 divine names are honored. In Jainism, 108 virtues are recognized as the path to liberation.",
+  },
+];
+
+const phases = [
+  {
+    phase: "Foundation",
+    days: "Day1-21",
+    number: 1,
+    title: "Discipline begins the journey",
+    description:
+      "To build consistency, correct pronunciation, and mental focus. This phase is about habit formation. The mind may wander. The body may resist. But discipline is more important than depth at this stage.",
+    duration: "14 Mins",
+  },
+  {
+    phase: "Stabilization",
+    days: "Day 22-54",
+    number: 2,
+    title: "Breath and Sound become one",
+    description:
+      "To connect mantra with breath and deepen awareness. Now the mind starts settling. Chanting becomes rhythmic.",
+    duration: "14 Mins",
+  },
+  {
+    phase: "Deepening",
+    days: "Day 55-81",
+    number: 3,
+    title: "Mantra enters the heart",
+    description:
+      "To move from verbal chanting to internal repetition (Japa). This phase is about internalization.",
+    duration: "14 Mins",
+  },
+  {
+    phase: "Integration",
+    days: "Day 82-108",
+    number: 4,
+    title: "Sound become stillness",
+    description:
+      "To integrate mantra into daily life. Chanting is no longer practice. It becomes presence.",
+    duration: "14 Mins",
+  },
+];
+
 function MantraSadhana108() {
   const navigate = useNavigate();
-  const [expandedPhase, setExpandedPhase] = useState(null);
-
-
-  const phases = [
-    {
-      name: "Foundation",
-      tagline: "Discipline Begins the Journey",
-      days: "Day 1–21",
-      color: "#681327",
-      purpose:
-        "To build consistency, correct pronunciation, and mental focus. This phase is about habit formation. The mind may wander. The body may resist. But discipline is more important than depth at this stage.",
-      focusAreas: [
-        "Fix a specific daily time",
-        "Sit in the same place",
-        "Maintain steady posture",
-        "Learn correct mantra pronunciation",
-        "Chant slowly and consciously",
-      ],
-      mantras: {
-        primary: ["Om (21 times)", "Gayatri Mantra (11 times)"],
-        optional: ["Om Namah Shivaya (108 times using mala)"],
-      },
-      innerExperience: [
-        "Restlessness",
-        "Boredom",
-        "Distraction",
-        "Mechanical chanting",
-      ],
-      innerNote:
-        "This is normal. Do not judge. Continue. Discipline creates spiritual momentum.",
-      transformationGoal: [
-        "Have a fixed routine",
-        "Chant with clarity",
-        "Sit comfortably for 10–15 minutes",
-        "Feel slight mental stability",
-      ],
-      transformationNote: "Foundation is about commitment, not intensity.",
-    },
-    {
-      name: "Stabilization",
-      tagline: "Breath and Sound Become One",
-      days: "Day 22–54",
-      color: "#1B4430",
-      purpose:
-        "To connect mantra with breath and deepen awareness. Now the mind starts settling. Chanting becomes rhythmic.",
-      focusAreas: [
-        "Synchronize mantra with breathing",
-        "Chant from the diaphragm",
-        "Keep spine straight",
-        "Reduce speed slightly",
-        "Increase awareness of vibration",
-      ],
-      mantras: {
-        primary: [
-          "Gayatri Mantra (21 times)",
-          "Mahamrityunjaya Mantra (11 times)",
-        ],
-        optional: ["Om Namah Shivaya (108 times)"],
-      },
-      innerExperience: [
-        "Calmness increasing",
-        "Thoughts slowing",
-        "Emotional balance improving",
-        "Subtle vibrations in chest or forehead",
-      ],
-      innerNote: "Mantra starts moving from lips to mind.",
-      transformationGoal: [
-        "Mind becomes quieter",
-        "Chanting feels natural",
-        "Breath becomes deeper",
-        "Awareness increases",
-      ],
-      transformationNote:
-        "Now mantra begins to reshape subconscious patterns.",
-    },
-    {
-      name: "Deepening",
-      tagline: "Mantra Enters the Heart",
-      days: "Day 55–81",
-      color: "#422868",
-      purpose:
-        "To move from verbal chanting to internal repetition (Japa). This phase is about internalization.",
-      focusAreas: [
-        "Chant softly or mentally",
-        "Feel vibration in heart center",
-        "Maintain longer silence after chanting",
-        "Observe thoughts without reacting",
-      ],
-      mantras: {
-        primary: [
-          "Om Namah Shivaya (108 times)",
-          "OR Om Namo Bhagavate Vasudevaya (108 times)",
-        ],
-        optional: ["Add silent meditation after chanting (3–5 minutes)"],
-      },
-      innerExperience: [
-        "Emotional cleansing",
-        "Old memories surfacing",
-        "Sudden clarity",
-        "Deeper peace",
-      ],
-      innerNote:
-        "This is purification. Mantra now moves from mind to consciousness.",
-      transformationGoal: [
-        "You enjoy silence",
-        "Chanting becomes effortless",
-        "Emotional reactions reduce",
-        "Awareness stays longer in present moment",
-      ],
-      transformationNote: "Mantra becomes part of your identity.",
-    },
-    {
-      name: "Integration",
-      tagline: "Sound Becomes Stillness",
-      days: "Day 82–108",
-      color: "#8B6914",
-      purpose:
-        "To integrate mantra into daily life. Chanting is no longer practice. It becomes presence.",
-      focusAreas: [
-        "Maintain steady daily practice",
-        "Reduce external dependency",
-        "Increase silent mantra during day",
-        "Carry awareness into actions",
-      ],
-      mantras: {
-        primary: [
-          "Morning: Full 108 mantra repetition",
-          "Daytime: Silent mantra remembrance",
-          "Night: 5-minute gratitude meditation",
-        ],
-        optional: [],
-      },
-      innerExperience: [
-        "Stable inner calm",
-        "Quick emotional recovery",
-        "Clear decision-making",
-        "Natural detachment",
-        "Increased compassion",
-      ],
-      innerNote: "Now mantra works automatically within.",
-      transformationGoal: [
-        "Discipline becomes natural",
-        "Mind becomes clearer",
-        "Emotional control improves",
-        "Spiritual identity strengthens",
-        "Inner stillness deepens",
-      ],
-      transformationNote:
-        "You are not the same person who began on Day 1.",
-    },
-  ];
-
-  const completionBenefits = [
-    {
-      icon: "📿",
-      title: "Unshakeable Discipline",
-      description:
-        "108 days of consistent practice forges a daily sadhana that becomes second nature.",
-    },
-    {
-      icon: "🧠",
-      title: "Mental Clarity",
-      description:
-        "The mind becomes clearer, sharper, and no longer controlled by scattered thoughts.",
-    },
-    {
-      icon: "❤️",
-      title: "Emotional Mastery",
-      description:
-        "Reactions soften. You observe feelings instead of being overtaken by them.",
-    },
-    {
-      icon: "🙏",
-      title: "Spiritual Identity",
-      description:
-        "Mantra becomes part of who you are — a living, breathing devotion within.",
-    },
-    {
-      icon: "☮️",
-      title: "Inner Stillness",
-      description:
-        "Sound becomes silence. Practice becomes presence. Stillness deepens permanently.",
-    },
-  ];
 
   return (
     <div className={styles.page}>
-      {/* ── Hero ── */}
-      <section className={styles.hero}>
-        <div className={styles.heroOverlay} />
-        <div className={styles.heroSplit}>
-          {/* Left — text content */}
-          <div className={styles.heroLeft}>
-            <h1 className={styles.heroTitle}>108-Day Mantra Sādhana</h1>
-            <p className={styles.heroSubtitle}>
-              Commit to daily mantra and deepen your inner stillness. Chant
-              sacred mantras for 108 consecutive days and experience{" "}
-              <em>profound inner transformation</em> through sound and devotion.
-            </p>
-            <button
-              className={styles.btnJoinHero}
-              onClick={() =>
-                document
-                  .getElementById("phases")
-                  .scrollIntoView({ behavior: "smooth" })
-              }
-            >
-              Explore the 108-Day Path
-            </button>
-          </div>
-          {/* Right — image */}
-          <div className={styles.heroRight}>
-            <div
-              className={styles.heroImageOverlay}
-              style={{
-                background:
-                  "linear-gradient(to right, #6E1B21 0%, #6E1B2199 18%, transparent 50%)",
-              }}
-            />
+      <div className={styles.layout}>
+
+        {/* ── Left Panel ── */}
+        <div className={styles.leftPanel}>
+          <h1 className={styles.title}>108-Day Mantra Sādhana</h1>
+
+          <div className={styles.imageCard}>
+            <div className={styles.progressRow}>
+              <span className={styles.progressLabel}>Progress</span>
+              <div className={styles.progressTrack}>
+                <div className={styles.progressFill} />
+              </div>
+            </div>
             <img
               src="../108-Day Mantra Sadhana.png"
               alt="108-Day Mantra Sādhana"
-              className={styles.heroImage}
+              className={styles.heroImg}
             />
           </div>
-        </div>
-      </section>
 
-      {/* ── 4 Phases Overview ── */}
-      <section className={styles.phasesSection} id="phases">
-        <div className={styles.container}>
-          <p className={styles.eyebrowCenter}>
-            How the 108 Days Are Structured
-          </p>
-          <h2 className={styles.sectionTitle}>
-            Four Phases of{" "}
-            <span className={styles.maroon}>Transformation</span>
-          </h2>
-          <p className={styles.sectionSubtitle}>
-            Each phase builds upon the last — from discipline to stillness, from
-            sound to silence.
-          </p>
-          <div className={styles.phasesGrid}>
-            {phases.map((phase) => (
-              <div
-                key={phase.name}
-                className={styles.phaseCard}
-                style={{ borderTop: `3px solid ${phase.color}` }}
-              >
-                <span
-                  className={styles.phaseDays}
-                  style={{ color: phase.color }}
-                >
-                  {phase.days}
-                </span>
-                <h3 className={styles.phaseTitle}>{phase.name}</h3>
-                <p className={styles.phaseTagline}>"{phase.tagline}"</p>
-                <p className={styles.phaseDesc}>{phase.purpose}</p>
-              </div>
-            ))}
+          <div className={styles.controls}>
+            <button className={styles.controlBtn}>
+              <span className="material-symbols-outlined">play_arrow</span>
+              <span className={styles.controlLabel}>Play</span>
+            </button>
+            <button className={styles.controlBtn}>
+              <span className="material-symbols-outlined">add_circle</span>
+              <span className={styles.controlLabel}>Save</span>
+            </button>
+            <button className={styles.controlBtn}>
+              <span className="material-symbols-outlined">share</span>
+              <span className={styles.controlLabel}>Share</span>
+            </button>
           </div>
-        </div>
-      </section>
 
-      {/* ── Detailed Phase Breakdown ── */}
-      <section className={styles.detailSection}>
-        <div className={styles.container}>
-          <p className={styles.eyebrowCenter}>Complete Guide</p>
-          <h2 className={styles.sectionTitle}>
-            The <span className={styles.maroon}>108-Day Journey</span> in Detail
-          </h2>
-          <p className={styles.sectionSubtitle}>
-            Click any phase to expand its full practice guide, mantras, and
-            transformation goals.
+          <p className={styles.description}>
+            Commit to daily mantra and deepen your inner stillness. Chant sacred
+            mantras for 108 consecutive days and experience profound inner
+            transformation through sound and devotion.
           </p>
+        </div>
 
-          <div className={styles.phaseDetailList}>
-            {phases.map((phase, idx) => (
-              <div
-                key={phase.name}
-                className={`${styles.phaseDetailRow} ${
-                  expandedPhase === idx ? styles.phaseDetailRowOpen : ""
-                }`}
-                style={{ "--phase-color": phase.color }}
-              >
-                <button
-                  className={styles.phaseDetailHeader}
-                  onClick={() =>
-                    setExpandedPhase(expandedPhase === idx ? null : idx)
-                  }
-                >
-                  <span
-                    className={styles.phaseNumber}
-                    style={{ background: phase.color }}
-                  >
-                    Phase {idx + 1}
-                  </span>
-                  <span className={styles.phaseDetailName}>
-                    {phase.name}{" "}
-                    <span className={styles.phaseDetailDays}>
-                      ({phase.days})
-                    </span>
-                  </span>
-                  <span className={styles.phaseDetailTagline}>
-                    "{phase.tagline}"
-                  </span>
-                  <span className={styles.phaseChevron}>
-                    {expandedPhase === idx ? "▲" : "▼"}
-                  </span>
+        {/* ── Right Panel ── */}
+        <div className={styles.rightPanel}>
+          <p className={styles.sessionsCount}>4 Sessions</p>
+
+          {phases.map((item) => (
+            <div key={item.number} className={styles.sessionBlock}>
+              <p className={styles.phaseHeader}>
+                {item.phase} ({item.days})
+              </p>
+              <div className={styles.sessionRow}>
+                <span className={styles.sessionNumber}>{item.number}</span>
+                <div className={styles.sessionContent}>
+                  <h3 className={styles.sessionTitle}>{item.title}</h3>
+                  <p className={styles.sessionDesc}>{item.description}</p>
+                  <span className={styles.duration}>{item.duration}</span>
+                </div>
+                <button className={styles.playCircle}>
+                  <span className="material-symbols-outlined">play_arrow</span>
                 </button>
+              </div>
+            </div>
+          ))}
+        </div>
 
-                {expandedPhase === idx && (
-                  <div className={styles.phaseDetailBody}>
-                    <div className={styles.phaseDetailGrid}>
-                      {/* Focus Areas */}
-                      <div className={styles.phaseDetailBlock}>
-                        <p className={styles.phaseDetailLabel}>Focus Areas</p>
-                        <ul className={styles.phaseDetailUl}>
-                          {phase.focusAreas.map((f, i) => (
-                            <li key={i}>{f}</li>
-                          ))}
-                        </ul>
-                      </div>
+      </div>
 
-                      {/* Recommended Mantras */}
-                      <div className={styles.phaseDetailBlock}>
-                        <p className={styles.phaseDetailLabel}>
-                          Recommended Mantras
-                        </p>
-                        <p className={styles.mantraLabel}>Primary:</p>
-                        <ul className={styles.phaseDetailUl}>
-                          {phase.mantras.primary.map((m, i) => (
-                            <li key={i}>{m}</li>
-                          ))}
-                        </ul>
-                        {phase.mantras.optional.length > 0 && (
-                          <>
-                            <p className={styles.mantraLabel}>
-                              {phase.name === "Integration"
-                                ? ""
-                                : "Optional:"}
-                            </p>
-                            <ul className={styles.phaseDetailUl}>
-                              {phase.mantras.optional.map((m, i) => (
-                                <li key={i}>{m}</li>
-                              ))}
-                            </ul>
-                          </>
-                        )}
-                      </div>
-
-                      {/* Inner Experience */}
-                      <div className={styles.phaseDetailBlock}>
-                        <p className={styles.phaseDetailLabel}>
-                          Inner Experience
-                        </p>
-                        <ul className={styles.phaseDetailUl}>
-                          {phase.innerExperience.map((e, i) => (
-                            <li key={i}>{e}</li>
-                          ))}
-                        </ul>
-                        <p className={styles.phaseDetailNote}>
-                          {phase.innerNote}
-                        </p>
-                      </div>
-
-                      {/* Transformation Goal */}
-                      <div className={styles.phaseDetailBlock}>
-                        <p className={styles.phaseDetailLabel}>
-                          Transformation Goal
-                        </p>
-                        <ul className={styles.phaseDetailUl}>
-                          {phase.transformationGoal.map((g, i) => (
-                            <li key={i}>{g}</li>
-                          ))}
-                        </ul>
-                        <p className={styles.phaseDetailNote}>
-                          {phase.transformationNote}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                )}
+      {/* ── Why 108 is Sacred ── */}
+      <section className={styles.sacredSection}>
+        <div className={styles.sacredContainer}>
+          <p className={styles.sacredEyebrow}>The Number 108</p>
+          <h2 className={styles.sacredTitle}>Why 108 is Sacred in Hinduism</h2>
+          <p className={styles.sacredSubtitle}>
+            108 represents the wholeness of existence — the connection between
+            the individual soul and universal consciousness. It is not merely a
+            number. In Hindu philosophy, 108 is the numerical representation of
+            the universe itself.
+          </p>
+          <div className={styles.sacredGrid}>
+            {sacredFacts.map((fact, i) => (
+              <div key={i} className={styles.sacredCard}>
+                <p className={styles.sacredLabel}>{fact.label}</p>
+                <h3 className={styles.sacredHeading}>{fact.heading}</h3>
+                <p className={styles.sacredDesc}>{fact.description}</p>
               </div>
             ))}
+          </div>
+          <div className={styles.sacredSummary}>
+            <p className={styles.sacredSummaryText}>
+              108 bridges cosmos, body, sound, and time. Every strand of Vedic
+              knowledge — from astronomy to anatomy, from scripture to sacred
+              geography — converges on this single number, affirming that the
+              universe is not chaotic but ordered, and that the devotee who
+              chants 108 times participates consciously in that order.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* ── Completion / Benefits ── */}
-      <section className={styles.completionSection}>
-        <div className={styles.container}>
-          <p className={styles.eyebrowCenter}>What You Gain</p>
-          <h2 className={styles.sectionTitle}>
+      {/* ── After 108 Days — Benefits ── */}
+      <section className={styles.benefitsSection}>
+        <div className={styles.benefitsContainer}>
+          <p className={styles.benefitsEyebrow}>What You Gain</p>
+          <h2 className={styles.benefitsTitle}>
             After <span className={styles.maroon}>108 Days</span>
           </h2>
-          <p className={styles.sectionSubtitle}>
-            After completing the 108-Day Mantra Sādhana, you will have
-            undergone a complete inner transformation — from discipline to
-            stillness, from sound to silence.
+          <p className={styles.benefitsSubtitle}>
+            After completing the 108-Day Mantra Sādhana, you will have undergone
+            a complete inner transformation — from discipline to stillness, from
+            sound to silence.
           </p>
           <div className={styles.benefitsGrid}>
             {completionBenefits.map((b, i) => (
               <div key={i} className={styles.benefitCard}>
-                <span className={styles.benefitIcon}>{b.icon}</span>
-                <h3 className={styles.benefitTitle}>{b.title}</h3>
+                <h3 className={styles.benefitCardTitle}>{b.title}</h3>
                 <p className={styles.benefitDesc}>{b.description}</p>
               </div>
             ))}
@@ -417,30 +242,6 @@ function MantraSadhana108() {
         </div>
       </section>
 
-      {/* ── CTA ── */}
-      <section className={styles.ctaSection}>
-        <div className={styles.container}>
-          <div className={styles.ctaInner}>
-            <h2 className={styles.ctaTitle}>
-              Begin Your 108-Day Mantra Sādhana
-            </h2>
-            <p className={styles.ctaSubtext}>
-              108 days. One mantra. One seat. One breath at a time.
-              <br />
-              The transformation begins when you commit.
-            </p>
-            <div className={styles.ctaButtons}>
-              <button className={styles.btnPrimary}>Join the Sādhana</button>
-              <button
-                className={styles.btnSecondary}
-                onClick={() => navigate("/knowledge")}
-              >
-                ← Back to Knowledge
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

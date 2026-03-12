@@ -29,7 +29,7 @@ const teachingDetails = {
     teacher: "Narada Muni",
     duration: "8 min",
     sessions: "6 sessions",
-    image: "/bhaktiSutras.jpeg",
+    image: "/bhakti.png",
     description:
       "The Narada Bhakti Sutras are 84 aphorisms on the nature of divine love. Bhakti is not mere sentiment — it is the highest science of the heart, transforming ordinary human love into unconditional devotion to the Divine. This path dissolves the sense of separation between the devotee and the Beloved.",
     lessons: [

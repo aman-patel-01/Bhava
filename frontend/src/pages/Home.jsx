@@ -7,12 +7,14 @@ import Community from "../components/Community";
 import AppSection from "../components/AppSection";
 import FAQ from "../components/FAQ";
 import SacredJourney from "../components/SacredJourney";
+import GitaSlider from "../knowledge/GitaSlider";
 
 function Home() {
   return (
     <>
       <HomeMain />
       <SacredCollection />
+      <GitaSlider />
       <ProductSpecification />
       <OurMission />
       <Community />
