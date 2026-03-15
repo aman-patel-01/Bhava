@@ -28,11 +28,7 @@ function Community() {
             <div key={index} className={styles.col}>
               <div className={styles.testimonialCard}>
                 <div className={styles.stars}>
-                  <span>⭐</span>
-                  <span>⭐</span>
-                  <span>⭐</span>
-                  <span>⭐</span>
-                  <span>⭐</span>
+                  {"★★★★★"}
                 </div>
                 <p className={styles.testimonialText}>{testimonial.text}</p>
                 <p className={styles.testimonialAuthor}>{testimonial.author}</p>

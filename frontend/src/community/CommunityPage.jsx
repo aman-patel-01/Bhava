@@ -205,8 +205,8 @@ function CommunityPage() {
                       <span className={styles.authorLoc}>{d.location}</span>
                     </div>
                     <div className={styles.discussMeta}>
-                      <span>💬 {d.replies}</span>
-                      <span>🤍 {d.likes}</span>
+                      <span>{d.replies} replies</span>
+                      <span>{d.likes} likes</span>
                     </div>
                   </div>
                 </div>
