@@ -3,7 +3,7 @@ import styles from "./Services.module.css";
 const services = [
   {
     id: 0,
-    icon: "🪔",
+    icon: "✦",
     tag: "PUJA BOOKING",
     title: "Book a Sacred Puja",
     description:
@@ -14,7 +14,7 @@ const services = [
   },
   {
     id: 1,
-    icon: "🛕",
+    icon: "✦",
     tag: "LIVE DARSHAN",
     title: "Virtual Temple Darshan",
     description:
@@ -25,7 +25,7 @@ const services = [
   },
   {
     id: 2,
-    icon: "⭐",
+    icon: "✦",
     tag: "ASTROLOGY",
     title: "Jyotish Consultation",
     description:
@@ -36,7 +36,7 @@ const services = [
   },
   {
     id: 3,
-    icon: "🧘",
+    icon: "✦",
     tag: "COACHING",
     title: "1-on-1 Sadhana Coaching",
     description:
@@ -47,7 +47,7 @@ const services = [
   },
   {
     id: 4,
-    icon: "🚌",
+    icon: "✦",
     tag: "PILGRIMAGE",
     title: "Sacred Yatra Planning",
     description:
@@ -58,7 +58,7 @@ const services = [
   },
   {
     id: 5,
-    icon: "📦",
+    icon: "✦",
     tag: "SUBSCRIPTION",
     title: "Monthly Ritual Box",
     description:

@@ -2,32 +2,32 @@ import styles from "./AppPage.module.css";
 
 const features = [
   {
-    icon: "🔮",
+    icon: "✦",
     title: "Daily Vedic Horoscope",
     desc: "Personalised Jyotish readings based on your natal chart — daily, weekly and monthly forecasts.",
   },
   {
-    icon: "🪔",
+    icon: "✦",
     title: "Ritual Recommendations",
     desc: "AI-powered suggestions for daily pujas, mantras and remedies tailored to your goals and nakshatra.",
   },
   {
-    icon: "🛕",
+    icon: "✦",
     title: "Virtual Temple Darshan",
     desc: "Live and on-demand darshan from 200+ sacred temples. Receive prasad delivery after every visit.",
   },
   {
-    icon: "📦",
+    icon: "✦",
     title: "Curated Spiritual Boxes",
     desc: "Monthly subscription boxes with temple-sourced incense, malas, oils and sacred items.",
   },
   {
-    icon: "🧑‍🤝‍🧑",
+    icon: "✦",
     title: "Devotee Community",
     desc: "Join 50,000+ seekers, share experiences, attend satsangs and get guidance from teachers.",
   },
   {
-    icon: "🗺️",
+    icon: "✦",
     title: "Pilgrimage Planner",
     desc: "Plan and book guided spiritual journeys to Char Dham, Kashi, Vrindavan and beyond.",
   },
@@ -37,7 +37,7 @@ const stats = [
   { number: "500+",   label: "Temple Partnerships" },
   { number: "50K+",   label: "Active Devotees" },
   { number: "₹45L+",  label: "Offerings Facilitated" },
-  { number: "⭐ 4.9", label: "Average App Rating" },
+  { number: "4.9", label: "Average App Rating" },
 ];
 
 const screenshots = [
@@ -64,12 +64,8 @@ function AppPage() {
             — all in one beautifully designed app. Available on iOS & Android.
           </p>
           <div className={styles.heroBtns}>
-            <button className={styles.downloadBtn}>
-              <span className={styles.btnIcon}>⬇</span> App Store
-            </button>
-            <button className={styles.downloadBtn}>
-              <span className={styles.btnIcon}>⬇</span> Google Play
-            </button>
+            <button className={styles.downloadBtn}>App Store</button>
+            <button className={styles.downloadBtn}>Google Play</button>
           </div>
           <p className={styles.heroNote}>Free to download · 14-day premium trial</p>
         </div>

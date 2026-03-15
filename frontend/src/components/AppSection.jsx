@@ -14,7 +14,7 @@ function AppSection() {
     { number: "500+", label: "Temple Partnerships Verified" },
     { number: "10K+", label: "Satisfied Devotees (30-day retention: 68%)" },
     { number: "₹45L+", label: "Revenue Generated (3-month pilot)" },
-    { number: "⭐4.9/5", label: "Average Rating Across Channels" },
+    { number: "4.9/5", label: "Average Rating Across Channels" },
   ];
 
   return (
