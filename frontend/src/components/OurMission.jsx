@@ -26,7 +26,7 @@ function OurMission() {
 
           {/* Right side - Image */}
           <div className={styles.missionImage}>
-            <img src="/yogaWithOm.png" alt="Yoga Practice" />
+            <img src="/Sacred Mission.png" alt="Sacred Mission" />
           </div>
         </div>
       </div>
