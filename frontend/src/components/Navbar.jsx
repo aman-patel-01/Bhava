@@ -91,12 +91,12 @@ function Navbar() {
                 </Link>
               </li>
               <li className={styles.navItem}>
-                <Link
+                {/* <Link
                   className={`${styles.navLink} ${isActive("/services") ? styles.navLinkActive : ""}`}
                   to="/services"
                 >
                   Services
-                </Link>
+                </Link> */}
               </li>
               <li className={styles.navItem}>
                 <Link
