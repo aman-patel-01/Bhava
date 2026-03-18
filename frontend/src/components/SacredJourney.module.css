@@ -5,28 +5,35 @@
 
 /* Sacred Content Section */
 .sacredContent {
-  background: linear-gradient(135deg, #e89b6d 0%, #e17055 100%);
-  padding: 80px 240px;
+  background: #f0ede8;
+  padding: 120px 240px;
   text-align: center;
 }
 
 /* Sacred Title */
 .sacredTitle {
   font-family: 'Canela', Cormorant, serif;
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 700;
-  color: #ffffff;
   margin-bottom: 30px;
-  line-height: 1.3;
+  line-height: 1.2;
+}
+
+.titleGreen {
+  color: #1a4a2e;
+}
+
+.titleOrange {
+  color: #c9593a;
 }
 
 /* Sacred Description */
 .sacredDescription {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   line-height: 1.8;
-  color: #ffffff;
+  color: #2c2c2c;
   margin-bottom: 40px;
-  max-width: 900px;
+  max-width: 860px;
   margin-left: auto;
   margin-right: auto;
   font-weight: 400;
@@ -37,98 +44,44 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
 }
 
 /* Pre-Order Button */
 .btnPreorder {
-  background: #ffffff;
-  color: #e17055;
-  border: none;
-  padding: 16px 40px;
+  background: transparent;
+  color: #1a1a1a;
+  border: 2px solid #1a1a1a;
+  padding: 18px 120px;
   font-size: 1.05rem;
-  font-weight: 700;
+  font-weight: 500;
   border-radius: 999px;
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: 'Neue Haas Grotesk', Inter, sans-serif;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .btnPreorder:hover {
-  background: #f5f5f5;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-}
-
-/* View Collection Button */
-.btnCollection {
-  background: transparent;
+  background: #1a1a1a;
   color: #ffffff;
-  border: 2px solid #ffffff;
-  padding: 14px 40px;
-  font-size: 1.05rem;
-  font-weight: 700;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: 'Neue Haas Grotesk', Inter, sans-serif;
-}
-
-.btnCollection:hover {
-  background: #ffffff;
-  color: #e17055;
   transform: translateY(-2px);
-}
-
-/* Banner Section */
-.sacredBanner {
-  background: #d63447;
-  padding: 18px 240px;
-  text-align: center;
-}
-
-.bannerText {
-  font-size: 0.95rem;
-  color: #ffffff;
-  font-weight: 500;
-  line-height: 1.5;
-}
-
-.bannerLink {
-  text-decoration: underline;
-  cursor: pointer;
-  font-weight: 700;
-}
-
-.bannerLink:hover {
-  opacity: 0.9;
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 1400px) {
   .sacredContent {
-    padding: 80px 180px;
-  }
-  
-  .sacredBanner {
-    padding: 18px 180px;
+    padding: 100px 180px;
   }
 }
 
 @media (max-width: 1200px) {
   .sacredContent {
-    padding: 70px 120px;
+    padding: 80px 120px;
   }
-  
-  .sacredBanner {
-    padding: 18px 120px;
-  }
-  
+
   .sacredTitle {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
-  
+
   .sacredDescription {
     font-size: 1rem;
   }
@@ -136,88 +89,59 @@
 
 @media (max-width: 1024px) {
   .sacredContent {
-    padding: 60px 80px;
+    padding: 70px 80px;
   }
-  
-  .sacredBanner {
-    padding: 16px 80px;
-  }
-  
+
   .sacredTitle {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
   }
-  
+
   .sacredDescription {
     font-size: 0.95rem;
   }
-  
-  .sacredButtons {
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .btnPreorder,
-  .btnCollection {
-    width: 100%;
-    max-width: 350px;
+
+  .btnPreorder {
+    padding: 18px 80px;
   }
 }
 
 @media (max-width: 768px) {
   .sacredContent {
-    padding: 50px 40px;
+    padding: 60px 40px;
   }
-  
-  .sacredBanner {
-    padding: 14px 40px;
-  }
-  
+
   .sacredTitle {
-    font-size: 1.9rem;
+    font-size: 2rem;
   }
-  
+
   .sacredDescription {
     font-size: 0.9rem;
     margin-bottom: 35px;
   }
-  
-  .btnPreorder,
-  .btnCollection {
+
+  .btnPreorder {
+    padding: 16px 60px;
     font-size: 1rem;
-    padding: 14px 30px;
-  }
-  
-  .bannerText {
-    font-size: 0.85rem;
   }
 }
 
 @media (max-width: 480px) {
   .sacredContent {
-    padding: 40px 20px;
+    padding: 50px 20px;
   }
-  
-  .sacredBanner {
-    padding: 12px 20px;
-  }
-  
+
   .sacredTitle {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
   }
-  
+
   .sacredDescription {
     font-size: 0.85rem;
     line-height: 1.6;
   }
-  
-  .btnPreorder,
-  .btnCollection {
+
+  .btnPreorder {
+    padding: 14px 40px;
     font-size: 0.95rem;
-    padding: 12px 25px;
     width: 100%;
-  }
-  
-  .bannerText {
-    font-size: 0.8rem;
   }
 }
