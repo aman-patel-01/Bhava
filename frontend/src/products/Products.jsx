@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
+import { motion } from "framer-motion";
 import styles from "./Products.module.css";
 import { useCart } from "../context/CartContext";
 
@@ -9,7 +10,7 @@ const products = [
     title: "Vedic Incense Series",
     price: "₹1,299",
     description: "Hand-rolled using 16th-century temple recipes, infused with Himalayan herbs and sacred mantras.",
-    images: ["/incense.jpeg", "/incense.jpeg", "/incense.jpeg"],
+    image: "/incense.jpeg",
   },
   {
     id: 1,
@@ -17,7 +18,7 @@ const products = [
     title: "Sacred Sambrani Cups",
     price: "₹899",
     description: "Purified resin sambrani with aromatic woods, perfect for daily pujas and sacred rituals.",
-    images: ["/incense.jpeg", "/incense.jpeg", "/incense.jpeg"],
+    image: "/incense.jpeg",
   },
   {
     id: 0,
@@ -41,7 +42,7 @@ const products = [
     title: "Meditation Ritual Kit",
     price: "₹749",
     description: "Crafted from 108 medicinal herbs, each stick carries the blessing of traditional temple practitioners.",
-    images: ["/incense.jpeg", "/incense.jpeg", "/incense.jpeg"],
+    image: "/incense.jpeg",
   },
   {
     id: 3,
@@ -49,7 +50,7 @@ const products = [
     title: "Platinum Devotion Box",
     price: "₹1,599",
     description: "Ayurvedic blend of coconut and sacred herbs, traditionally used for temple abhishekam.",
-    images: ["/anionting.jpeg", "/anionting.jpeg", "/temple(4).jpeg"],
+    image: "/anionting.jpeg",
   },
 ];
 
@@ -65,10 +66,64 @@ const filterMap = {
   Yoga:       ["YOGA"],
 };
 
+function FlipCard({ card, onAddToCart }) {
+  const [flipped, setFlipped] = useState(false);
+  const [added, setAdded] = useState(false);
+
+  const handleAdd = (e) => {
+    e.stopPropagation();
+    onAddToCart(card);
+    setAdded(true);
+    setTimeout(() => setAdded(false), 1800);
+  };
+
+  return (
+    <div
+      className={styles.cardOuter}
+      onMouseEnter={() => setFlipped(true)}
+      onMouseLeave={() => setFlipped(false)}
+    >
+      <motion.div
+        className={styles.cardInner}
+        animate={{ rotateY: flipped ? 180 : 0 }}
+        transition={{ duration: 0.55, ease: [0.4, 0, 0.2, 1] }}
+        style={{ transformStyle: "preserve-3d" }}
+      >
+        {/* BACK — image face, visible by default */}
+        <div className={styles.cardBack}>
+          <img src={card.image} alt={card.title} className={styles.cardBackImg} />
+          <div className={styles.cardBackOverlay}>
+            <span className={styles.cardBackCategory}>{card.category}</span>
+            <p className={styles.cardBackTitle}>{card.title}</p>
+          </div>
+        </div>
+
+        {/* FRONT — details face, revealed on hover flip */}
+        <div className={styles.cardFront}>
+          <div className={styles.cardFrontContent}>
+            <div className={styles.frontTop}>
+              <span className={styles.frontCategory}>{card.category}</span>
+              <h3 className={styles.frontTitle}>{card.title}</h3>
+              <p className={styles.frontPrice}>{card.price}</p>
+            </div>
+            <div className={styles.frontBottom}>
+              <p className={styles.frontDescription}>{card.description}</p>
+              <button
+                className={`${styles.frontBtn} ${added ? styles.frontBtnAdded : ""}`}
+                onClick={handleAdd}
+              >
+                {added ? "✓ Added!" : "Add to Cart"}
+              </button>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
 function Products() {
   const { addToCart } = useCart();
-  const [activeSlide, setActiveSlide] = useState({});
-  const [hoveredCard, setHoveredCard] = useState(null);
   const [activeFilter, setActiveFilter] = useState("All");
   const [addedId, setAddedId] = useState(null);
   const [hasLoaded, setHasLoaded] = useState({});
@@ -92,33 +147,6 @@ function Products() {
     activeFilter === "All"
       ? products
       : products.filter((p) => filterMap[activeFilter]?.includes(p.category));
-
-  useEffect(() => {
-    if (hoveredCard !== null) {
-      intervalRefs.current[hoveredCard] = setInterval(() => {
-        setActiveSlide((prev) => {
-          const cur = prev[hoveredCard] || 0;
-          return { ...prev, [hoveredCard]: (cur + 1) % 3 };
-        });
-      }, 1500);
-    }
-    return () => {
-      if (hoveredCard !== null && intervalRefs.current[hoveredCard]) {
-        clearInterval(intervalRefs.current[hoveredCard]);
-      }
-    };
-  }, [hoveredCard]);
-
-  const handleMouseEnter = (id) => setHoveredCard(id);
-
-  const handleMouseLeave = (id) => {
-    setHoveredCard(null);
-    if (intervalRefs.current[id]) clearInterval(intervalRefs.current[id]);
-    setActiveSlide((prev) => ({ ...prev, [id]: 0 }));
-  };
-
-  const handleDotClick = (id, idx) =>
-    setActiveSlide((prev) => ({ ...prev, [id]: idx }));
 
   return (
     <div className={styles.page}>
@@ -148,8 +176,8 @@ function Products() {
       {/* Grid */}
       <div className={styles.container}>
         <div className={styles.grid}>
-          {filtered.map((card) => (
-            <div
+          {filtered.slice(0, 6).map((card) => (
+            <FlipCard
               key={card.id}
               className={styles.card}
               onMouseEnter={() => handleMouseEnter(card.id)}
