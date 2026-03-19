@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import styles from "./Community.module.css";
 
 function Community() {
@@ -18,17 +18,6 @@ function Community() {
   ];
 
   const [current, setCurrent] = useState(0);
-  const hoverRef = useRef(false);
-
-  // autoplay every 1s, pause on hover
-  useEffect(() => {
-    const id = setInterval(() => {
-      if (!hoverRef.current) {
-        setCurrent((c) => (c + 1) % testimonials.length);
-      }
-    }, 1000);
-    return () => clearInterval(id);
-  }, [testimonials.length]);
 
   return (
     <section className={styles.communitySection}>
@@ -38,11 +27,7 @@ function Community() {
         </h2>
       </div>
 
-      <div
-        className={styles.fullWidthSlider}
-        onMouseEnter={() => (hoverRef.current = true)}
-        onMouseLeave={() => (hoverRef.current = false)}
-      >
+      <div className={styles.fullWidthSlider}>
         <button
           aria-label="Previous review"
           className={`${styles.circleArrow} ${styles.left}`}

@@ -1,29 +1,14 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "./GitaSlider.module.css";
+import { getTodaysQuote } from "./gitaQuotes";
 
-const shlokas = [
-  {
-    text: "You have the right to work, but never to the fruit of work. You should never engage in action for the sake of reward, nor should you long for inaction.",
-    ref: "BHAGAVAD GITA 2:47",
-  }
- 
-];
+const quote = getTodaysQuote();
 
 function GitaSlider() {
-  const [current, setCurrent] = useState(0);
   const [copied, setCopied] = useState(false);
 
-  const goNext = () => {
-    if (current < shlokas.length - 1) setCurrent(current + 1);
-  };
-
-  const goPrev = () => {
-    if (current > 0) setCurrent(current - 1);
-  };
-
   const handleShare = async () => {
-    const shloka = shlokas[current];
-    const text = `"${shloka.text}" — ${shloka.ref}`;
+    const text = `"${quote.text}" — ${quote.ref}`;
     if (navigator.share) {
       await navigator.share({ text });
     } else {
@@ -37,7 +22,6 @@ function GitaSlider() {
     <section className={styles.gitaSection}>
       <div className={styles.gitaBg} />
 
-      {/* Header */}
       <div className={styles.gitaHeader}>
         <h2 className={styles.gitaHeading}>Daily Wisdom</h2>
         <p className={styles.gitaSubheading}>
@@ -45,15 +29,12 @@ function GitaSlider() {
         </p>
       </div>
 
-      {/* Full-width row: arrow | card | arrow */}
       <div className={styles.sliderWrapper}>
-
-        {/* Quote card — full width */}
         <div className={styles.quoteCard}>
           <div className={styles.quoteIcon}>"</div>
-          <p className={styles.quoteText}>{shlokas[current].text}</p>
+          <p className={styles.quoteText}>{quote.text}</p>
           <div className={styles.quoteDivider} />
-          <span className={styles.quoteRef}>{shlokas[current].ref}</span>
+          <span className={styles.quoteRef}>{quote.ref}</span>
           <button
             className={styles.shareBtn}
             onClick={handleShare}
@@ -73,25 +54,6 @@ function GitaSlider() {
             )}
           </button>
         </div>
-
-        {/* Left arrow — absolute at left edge */}
-        <button
-          className={`${styles.arrow} ${styles.arrowLeft} ${current === 0 ? styles.arrowHidden : ""}`}
-          onClick={goPrev}
-          aria-label="Previous quote"
-        >
-          ‹
-        </button>
-
-        {/* Right arrow — absolute at right edge */}
-        <button
-          className={`${styles.arrow} ${styles.arrowRight} ${current === shlokas.length - 1 ? styles.arrowHidden : ""}`}
-          onClick={goNext}
-          aria-label="Next quote"
-        >
-          ›
-        </button>
-
       </div>
     </section>
   );
