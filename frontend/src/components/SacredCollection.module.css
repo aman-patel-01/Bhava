@@ -1,5 +1,5 @@
 .sacredCollectionSection {
-  background-color: #faf8f5;
+  background-color: #F4EFE6;
   padding: 60px 0;
 }
 
@@ -7,6 +7,7 @@
   max-width: 1600px;
   margin: 0 auto;
   padding: 0 28px;
+  background-color: #F4EFE6;
 }
 
 .sectionTitle {
@@ -32,6 +33,7 @@
   display: flex;
   gap: 24px;
   will-change: transform;
+  background-color: #F4EFE6;
 }
 
 /* ── Flip card shell ── */
