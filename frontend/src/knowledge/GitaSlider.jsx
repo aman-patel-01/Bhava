@@ -186,9 +186,9 @@ function GitaSlider() {
       <div className={styles.gitaBg} />
 
       <div className={styles.gitaHeader}>
-        <h2 className={styles.gitaHeading}>Daily Wisdom</h2>
+        <h2 className={styles.gitaHeading}>Daily Reflection</h2>
         <p className={styles.gitaSubheading}>
-          Timeless guidance from the Bhagavad Gita
+          Ancient words, experienced in the present moment.
         </p>
       </div>
 
