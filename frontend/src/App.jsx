@@ -17,6 +17,7 @@ import ScrollManager from "./components/ScrollManager";
 import ProfilePage from "./account/ProfilePage";
 import OrdersPage from "./account/OrdersPage";
 import AddressesPage from "./account/AddressesPage";
+import CareerPage from "./pages/carrerpage";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
             <Route path="/faq"        element={<FAQPage />} />
             <Route path="/knowledge"  element={<Knowledge />} />
             <Route path="/knowledge/*" element={<KnowledgeRoutes />} />
+              <Route path="/career"     element={<CareerPage />} /> 
           </Route>
         </Routes>
       </CartProvider>
