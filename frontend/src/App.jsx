@@ -13,6 +13,7 @@ import ContactUs from "./pages/ContactUs";
 import FAQPage from "./pages/FAQPage";
 import AuthPage from "./auth/AuthPage";
 import CartPage from "./cart/CartPage";
+import ScrollManager from "./components/ScrollManager";
 import ProfilePage from "./account/ProfilePage";
 import OrdersPage from "./account/OrdersPage";
 import AddressesPage from "./account/AddressesPage";
@@ -22,6 +23,7 @@ function App() {
   return (
     <BrowserRouter>
       <CartProvider>
+        <ScrollManager />
         <Routes>
           {/* Auth page — outside Layout (no navbar/footer) */}
           <Route path="/auth" element={<AuthPage />} />
