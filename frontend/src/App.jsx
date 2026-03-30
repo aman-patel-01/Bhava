@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "./context/CartContext";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
-import Knowledge from "./pages/Knowledge";
-import KnowledgeRoutes from "./routes/KnowledgeRoutes";
+import Knowledge from "./knowledge/Knowledge";
+import KnowledgeRoutes from "./knowledge/KnowledgeRoutes";
 import Products from "./products/Products";
 import Services from "./services/Services";
 import AppPage from "./app/AppPage";
@@ -13,7 +13,6 @@ import ContactUs from "./pages/ContactUs";
 import FAQPage from "./pages/FAQPage";
 import AuthPage from "./auth/AuthPage";
 import CartPage from "./cart/CartPage";
-import ScrollManager from "./components/ScrollManager";
 import ProfilePage from "./account/ProfilePage";
 import OrdersPage from "./account/OrdersPage";
 import AddressesPage from "./account/AddressesPage";
@@ -23,7 +22,7 @@ function App() {
   return (
     <BrowserRouter>
       <CartProvider>
-        <ScrollManager />
+        {/* <ScrollManager /> */}
         <Routes>
           {/* Auth page — outside Layout (no navbar/footer) */}
           <Route path="/auth" element={<AuthPage />} />

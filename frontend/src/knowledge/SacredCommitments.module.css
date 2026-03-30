@@ -1,0 +1,291 @@
+:root {
+  --temple-ivory: #F4EFE6;
+  --near-black: #0F1413;
+  --gold-start: #D4AF37;
+  --light-on-dark: #F7F3EC;
+}
+
+.commitmentsSection {
+  background: #F4EFE6;
+  padding: 56px 0 48px;
+  border-top: 1px solid rgba(198, 161, 74, 0.15);
+}
+
+.commitmentsHeader {
+  text-align: center;
+  padding: 0 20px;
+  margin-bottom: 40px;
+}
+
+.commitmentsHeading {
+  font-size: 36px;
+  font-weight: 700;
+  color: #E07B39;
+  margin-bottom: 10px;
+  font-family: 'Canela', Cormorant, serif;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+}
+
+.commitTrackWrapper {
+  position: relative;
+}
+
+.commitTrackOuter {
+  overflow: hidden;
+  padding: 0 60px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.commitTrack {
+  display: flex;
+  gap: 12px;
+  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+.commitmentCard {
+  flex-shrink: 0;
+  height: 480px;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16);
+  background-color: var(--card-color);
+  min-width: calc(100vw - 272px);
+}
+
+.commitNavRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+  padding: 0 60px;
+}
+
+.commitEdgeArrow {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(15, 15, 15, 0.72);
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
+  font-size: 26px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.28);
+  transition: opacity 0.25s ease, transform 0.25s ease, background 0.25s ease;
+  line-height: 1;
+}
+
+.commitEdgeArrowHidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%) scale(0.88);
+}
+
+.commitEdgeArrowVisible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(-50%) scale(1);
+}
+
+.commitEdgeArrow:hover {
+  background: rgba(30, 30, 30, 0.9);
+}
+
+.commitEdgeArrowLeft {
+  right: auto;
+  left: 14px;
+}
+
+.commitCardLeft {
+  flex: 0 0 40%;
+  max-width: 40%;
+  display: flex;
+  align-items: center;
+  padding: 0 52px;
+  position: relative;
+  overflow: hidden;
+}
+
+.commitCardLeft::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 32px;
+  right: 32px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(198, 161, 74, 0.35), transparent);
+}
+
+.commitCardLeftInner {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+}
+
+.commitSubtitle {
+  font-size: 11px;
+  color: rgba(247, 243, 236, 0.6);
+  font-family: 'Neue Haas Grotesk', Inter, sans-serif;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.commitDevotees {
+  font-size: 13px;
+  color: rgba(247, 243, 236, 0.75);
+  font-family: 'Neue Haas Grotesk', Inter, sans-serif;
+  margin-bottom: 18px;
+}
+
+.commitTitle {
+  font-size: 32px;
+  font-weight: 400;
+  color: #F7F3EC;
+  font-family: 'Canela', Cormorant, serif;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  letter-spacing: -0.2px;
+}
+
+.commitDescription {
+  font-size: 16px;
+  line-height: 1.65;
+  color: rgba(247, 243, 236, 0.7);
+  font-family: 'Canela', Cormorant, serif;
+  margin-bottom: 20px;
+}
+
+.commitHighlights {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.commitHighlights li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: rgba(247, 243, 236, 0.7);
+  font-family: 'Neue Haas Grotesk', Inter, sans-serif;
+}
+
+.commitDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold-start);
+  flex-shrink: 0;
+}
+
+.btnJoinChallenge {
+  background: #ffffff;
+  color: var(--near-black);
+  border: 1.5px solid transparent;
+  padding: 10px 44px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  font-family: 'Neue Haas Grotesk', Inter, sans-serif;
+  align-self: flex-start;
+  letter-spacing: 0.3px;
+  text-align: center;
+  min-width: 180px;
+}
+
+.btnJoinChallenge:hover {
+  background: var(--card-color);
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.commitCardRight {
+  flex: 0 0 60%;
+  max-width: 60%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--card-color);
+}
+
+.commitCardImage {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.commitCardImageOverlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.commitDots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.commitDot2 {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(30, 45, 30, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.commitDotActive {
+  width: 28px;
+  border-radius: 4px;
+  background: #C0671E;
+}
+
+@media (max-width: 1024px) {
+  .commitmentCard { height: 420px; min-width: calc(100vw - 180px); }
+  .commitCardLeft { padding: 0 36px; }
+  .commitTitle { font-size: 26px; }
+}
+
+@media (max-width: 768px) {
+  .commitmentsSection { padding: 72px 20px; }
+  .commitmentsHeading { font-size: 32px; }
+  .commitTrackOuter { padding: 0 20px; }
+  .commitNavRow { padding: 0 20px; }
+  .commitmentCard { flex-direction: column; height: auto; min-width: calc(100vw - 72px); }
+  .commitCardLeft { flex: none; max-width: 100%; padding: 36px 28px; }
+  .commitCardRight { flex: none; max-width: 100%; height: 240px; }
+}
+
+@media (max-width: 480px) {
+  .commitmentsHeading { font-size: 28px; }
+  .commitTitle { font-size: 22px; }
+  .commitCardLeft { padding: 28px 20px; }
+}

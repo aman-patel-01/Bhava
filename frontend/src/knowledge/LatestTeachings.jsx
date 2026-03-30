@@ -105,7 +105,7 @@ function LatestTeachings() {
           onScroll={handleScroll}
         >
           {teachings.map((t, i) => (
-            <div key={i} className={styles.card} onClick={() => navigate(t.route)} style={{ cursor: "pointer" }}>
+            <div key={i} className={styles.card} onClick={() => { document.documentElement.style.scrollBehavior = "auto"; window.scrollTo(0, 0); navigate(t.route); }} style={{ cursor: "pointer" }}>
               {/* Image / thumb area */}
               <div className={styles.cardThumb} style={{ backgroundImage: `url(${t.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 <div className={styles.thumbBg} />

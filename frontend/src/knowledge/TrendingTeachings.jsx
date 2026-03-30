@@ -1,6 +1,12 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./TrendingTeaching.module.css";
+import TrendingDetail from "./TrendingDetail";
+
+// eslint-disable-next-line react-refresh/only-export-components
+export const trendingRoutes = [
+  { path: "trending/:slug", element: <TrendingDetail /> },
+];
 
 const teachings = [
   {
@@ -150,7 +156,7 @@ function TrendingTeachings() {
             <div
               key={t.id}
               className={styles.teachingCard}
-              onClick={() => navigate(t.route)}
+              onClick={() => { document.documentElement.style.scrollBehavior = "auto"; window.scrollTo(0, 0); navigate(t.route); }}
             >
               <div className={styles.teachingThumb}>
                 <img
