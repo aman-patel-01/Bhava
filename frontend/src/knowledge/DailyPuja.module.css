@@ -56,7 +56,7 @@
 .hero {
   position: relative;
   background: linear-gradient(135deg, #3a1a0e 0%, #5a2a1a 55%, #2a0f08 100%);
-  min-height: 560px;
+  min-height: 75vh; /* reduced further to shorten section */
   overflow: hidden;
 }
 
@@ -76,7 +76,7 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  min-height: 560px;
+  min-height: 75vh; /* keep split columns in sync with hero height */
 }
 
 .heroLeft {
@@ -100,10 +100,10 @@
 
 .heroImage {
   position: absolute;
-  top: -15%;
+  top: -25%; /* move image up to crop bottom */
   left: -15%;
-  width: 130%;
-  height: 130%;
+  width: 150%;
+  height: 150%;
   object-fit: cover;
   object-position: center;
   display: block;

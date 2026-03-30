@@ -76,7 +76,7 @@
   font-family: 'Canela', Cormorant, Georgia, serif;
   font-size: 36px;
   font-weight: 700;
-  color:rgb(45, 70, 45);
+  color: #4A0B1D;
   margin: 0 0 10px;
   text-align: center;
   letter-spacing: -0.3px;
@@ -391,7 +391,7 @@
 .dotName {
   width: 6px;
   height: 6px;
-  background-color: #152f19;
+  background-color: #C0671E;
   border-radius: 50%;
   display: block;
 }
@@ -416,7 +416,7 @@
 
 
 .heading {
-  color: #2d4a3a;
+  color: #C0671E;
   font-weight: 700;
   font-size: 24px;
   margin: 0;

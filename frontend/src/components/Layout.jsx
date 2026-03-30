@@ -9,18 +9,19 @@ const betaStyle = {
   top: "28px",
   left: "20px",
   zIndex: 9999,
-  background: "#EDEADE",
+  background: "#4A0B1D",
   border: "1.5px solid #1B3A2D",
   borderRadius: "10px",
   padding: "5px 14px",
   fontFamily: "Inter, 'Work Sans', sans-serif",
   fontSize: "12px",
   fontWeight: "700",
-  color: "#1B3A2D",
+  color: "#F4EFE6",
   letterSpacing: "3px",
   lineHeight: "1",
   pointerEvents: "none",
 };
+ 
 
 function Layout() {
   return (
