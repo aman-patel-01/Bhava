@@ -1,6 +1,6 @@
-/* =========================
+/* 
    🎨 COLOR TOKENS
-========================= */
+*/
 :root {
   --color-bg-ivory: #F4EFE6;
   --color-bg-beige: #E6C19C;
@@ -11,16 +11,16 @@
   --color-text-muted: #6A625A;
 }
 
-/* =========================
+/* 
    CONTAINER
-========================= */
+*/
 .container {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 240px;
 }
 
-/* ── 108 + Tiger Eye Summary ── */
+/**/
 .tigerSummarySection {
   background: var(--color-bg-ivory);
   padding: 40px 20px 32px;
@@ -46,7 +46,7 @@
   font-family: 'Neue Haas Grotesk', Inter, sans-serif;
 }
 
-/* ── 108 + Tiger Eye Deep Knowledge ── */
+/* */
 .tigerKnowledgeSection {
   background-color: var(--color-bg-ivory);
   padding: 56px 20px 40px;
@@ -128,7 +128,7 @@
   color: #E07B39;
 }
 
-/* ── Responsive ── */
+/* */
 @media (max-width: 1400px) {
   .container {
     padding: 0 180px;

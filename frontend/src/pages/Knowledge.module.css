@@ -1,7 +1,7 @@
-/* ============================================
+/* 
    BHAVA — KNOWLEDGE PAGE
    Color System from PDF Brand Guide
-   ============================================ */
+   */
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
@@ -28,10 +28,10 @@
   font-family: 'Neue Haas Grotesk', Inter, sans-serif;
 }
 
-/* ══════════════════════════════════════
+/* 
    HERO SECTION
    Background: #F4EFE6 → #E6C19C gradient
-   ══════════════════════════════════════ */
+   */
  .knowledgeHeroesSection {
   display: flex;
   flex-direction: row;
@@ -169,14 +169,7 @@
   color: var(--burnished-gold);
 }
 
-/* ══════════════════════════════════════
-   SACRED COMMITMENTS SECTION
-   Background: #E6C19C (Warm Beige)
-   ══════════════════════════════════════ */
-/* ══════════════════════════════════════
-   SACRED COMMITMENTS — Full Width Slider
-   Background: #F4EFE6 (warm ivory, matches TrendingTeachings)
-   ══════════════════════════════════════ */
+/* */
 .commitmentsSection {
   background: #F4EFE6;
   padding: 56px 20 48px;
@@ -740,10 +733,7 @@
   opacity: 0.9;
 }
 
-/* ══════════════════════════════════════
-   TIGER EYE / SUMMARY SECTIONS
-   Background: #F4EFE6
-   ══════════════════════════════════════ */
+/*  */
 .tigerSummarySection {
   background: var(--temple-ivory);
   padding: 52px 20px 44px;
@@ -769,9 +759,7 @@
   font-family: 'Canela', Cormorant, serif;
 }
 
-/* ══════════════════════════════════════
-   KNOWLEDGE DEEP DIVE
-   ══════════════════════════════════════ */
+/*  */
 .tigerKnowledgeSection {
   background-color: var(--temple-ivory);
   padding: 69px 20px 52px;      /* +15% whitespace */
@@ -866,10 +854,7 @@
   font-size: 13px;
 }
 
-/* ══════════════════════════════════════
-   GITA FULL WIDTH — Dark Section
-   Background: #0F1413 (Near Black)
-   ══════════════════════════════════════ */
+/*  */
 .gitaFullWidthSection {
   background: var(--near-black);
   padding: 56px 0 64px;
@@ -924,9 +909,7 @@
   opacity: 0.8;
 }
 
-/* ══════════════════════════════════════
-   TOP CONTEXT (commented out in JSX but styled)
-   ══════════════════════════════════════ */
+/* */
 .topContextSection {
   background: var(--temple-ivory);
   padding: 44px 20px 32px;
@@ -953,9 +936,7 @@
   font-family: 'Canela', Cormorant, serif;
 }
 
-/* ══════════════════════════════════════
-   RESPONSIVE
-   ══════════════════════════════════════ */
+/* */
 @media (max-width: 1400px) {
   .container {
     padding: 0 180px;

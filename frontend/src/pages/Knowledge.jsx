@@ -31,7 +31,7 @@ function WisdomFlipCard({ category, width, navigate, onExploreMore }) {
           </div>
         </div>
 
-        {/* Front — details revealed on hover */}
+        {/*  */}
         <div className={styles.wisdomCardFront}>
           <div className={styles.wisdomCardFrontContent}>
             <h3 className={styles.wisdomFrontTitle}>{category.title}</h3>
