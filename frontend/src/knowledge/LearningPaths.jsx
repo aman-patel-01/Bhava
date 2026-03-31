@@ -1,6 +1,24 @@
 import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./LearningPaths.module.css";
+import DaysOfDevotion108 from "./DaysOfDevotion108";
+import BhagavadGitaJourney from "./BhagavadGitaJourney";
+import UpanishadWisdom from "./UpanishadWisdom";
+import YogaPhilosophy from "./YogaPhilosophy";
+import VedicChanting from "./VedicChanting";
+import DeityWisdom from "./DeityWisdom";
+import TantraShakti from "./TantraShakti";
+
+// eslint-disable-next-line react-refresh/only-export-components
+export const learningPathRoutes = [
+  { path: "108-days-devotion",    element: <DaysOfDevotion108 /> },
+  { path: "bhagavad-gita-journey", element: <BhagavadGitaJourney /> },
+  { path: "upanishad-wisdom",     element: <UpanishadWisdom /> },
+  { path: "yoga-philosophy",      element: <YogaPhilosophy /> },
+  { path: "vedic-chanting",       element: <VedicChanting /> },
+  { path: "deity-wisdom",         element: <DeityWisdom /> },
+  { path: "tantra-shakti",        element: <TantraShakti /> },
+];
 
 const paths = [
   { title: "108 Days of Devotion",    sub: "A sacred journey into the path of Bhakti.",         joined: "287K joined", color: "#5a1a3a", image: "/Learning%20Paths/108%20Days%20of%20Devotion.png",  route: "/knowledge/108-days-devotion" },
@@ -70,7 +88,7 @@ function LearningPaths() {
           onScroll={handleScroll}
         >
           {paths.map((p, i) => (
-            <div key={i} className={styles.card} onClick={() => navigate(p.route)} style={{ cursor: "pointer" }}>
+            <div key={i} className={styles.card} onClick={() => { document.documentElement.style.scrollBehavior = "auto"; window.scrollTo(0, 0); navigate(p.route); }} style={{ cursor: "pointer" }}>
               <div className={styles.cardThumb} style={{ backgroundImage: `url(${p.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 <div className={styles.thumbBg} />
                 <div className={styles.thumbOverlay} />

@@ -1,6 +1,38 @@
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./DailyPractices.module.css";
+import DailyPuja from "./DailyPuja";
+import Meditation from "./Meditation";
+import JapaMala from "./JapaMala";
+import VedicHymns from "./VedicHymns";
+import MantraChanting from "./MantraChanting";
+import SuryaNamaskar from "./SuryaNamaskar";
+import GitaReading from "./GitaReading";
+import Aarti from "./Aarti";
+import KarmaDharma from "./KarmaDharma";
+import DivineGrace from "./DivineGrace";
+import InnerPeace from "./InnerPeace";
+import SacredTraditions from "./SacredTraditions";
+import PathOfUnion from "./PathOfUnion";
+import NonDualWisdom from "./NonDualWisdom";
+
+// eslint-disable-next-line react-refresh/only-export-components
+export const dailyPracticeRoutes = [
+  { path: "daily-puja",         element: <DailyPuja /> },
+  { path: "meditation",         element: <Meditation /> },
+  { path: "japa-mala",          element: <JapaMala /> },
+  { path: "vedic-hymns",        element: <VedicHymns /> },
+  { path: "mantra-chanting",    element: <MantraChanting /> },
+  { path: "surya-namaskar",     element: <SuryaNamaskar /> },
+  { path: "gita-reading",       element: <GitaReading /> },
+  { path: "aarti",              element: <Aarti /> },
+  { path: "karma-dharma",       element: <KarmaDharma /> },
+  { path: "divine-grace",       element: <DivineGrace /> },
+  { path: "inner-peace",        element: <InnerPeace /> },
+  { path: "sacred-traditions",  element: <SacredTraditions /> },
+  { path: "path-of-union",      element: <PathOfUnion /> },
+  { path: "non-dual-wisdom",    element: <NonDualWisdom /> },
+];
 
 const practices = [
   { img: "/Daily%20Practices/Daily%20Puja.png",      title: "Morning Puja",      sub: "Begin the day in devotion and gratitude.",       detail: "15–28 min",       color: "#5a2a1a", route: "/knowledge/daily-puja" },
@@ -68,7 +100,7 @@ function DailyPractices() {
             <div
               key={i}
               className={styles.card}
-              onClick={() => p.route && navigate(p.route)}
+              onClick={() => { if (p.route) { document.documentElement.style.scrollBehavior = "auto"; window.scrollTo(0, 0); navigate(p.route); } }}
               style={{ cursor: p.route ? 'pointer' : 'default' }}
             >
               <div className={styles.cardThumb}>
