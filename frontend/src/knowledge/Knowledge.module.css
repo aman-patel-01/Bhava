@@ -1,7 +1,7 @@
-/* ============================================
+/* 
    BHAVA — KNOWLEDGE PAGE
    Color System from PDF Brand Guide
-   ============================================ */
+   */
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
@@ -28,10 +28,10 @@
   font-family: 'Neue Haas Grotesk', Inter, sans-serif;
 }
 
-/* ══════════════════════════════════════
+/* 
    HERO SECTION
    Background: #F4EFE6 → #E6C19C gradient
-   ══════════════════════════════════════ */
+   */
  .knowledgeHeroesSection {
   display: flex;
   flex-direction: row;
@@ -40,7 +40,7 @@
   min-height: 62vh;
   overflow: hidden;
   margin-bottom: 50px;
-}
+}  
 
 
 /* ── Left: text content ── */
@@ -169,14 +169,7 @@
   color: var(--burnished-gold);
 }
 
-/* ══════════════════════════════════════
-   SACRED COMMITMENTS SECTION
-   Background: #E6C19C (Warm Beige)
-   ══════════════════════════════════════ */
-/* ══════════════════════════════════════
-   SACRED COMMITMENTS — Full Width Slider
-   Background: #F4EFE6 (warm ivory, matches TrendingTeachings)
-   ══════════════════════════════════════ */
+/* */
 .commitmentsSection {
   background: #F4EFE6;
   padding: 56px 20 48px;
@@ -660,6 +653,7 @@
   right: 0;
   padding: 56px 28px 28px;
   background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 100%);
+  /* Force overlay content anchored bottom-left */
   display: flex !important;
   flex-direction: column !important;
   justify-content: flex-end !important;
@@ -676,6 +670,7 @@
   font-family: 'Canela', Cormorant, serif;
 }
 
+/* Ensure titles inside back overlays don't drift */
 .wisdomCardBackTitle {
   align-self: flex-start !important;
   margin-bottom: 480px !important;
@@ -738,10 +733,7 @@
   opacity: 0.9;
 }
 
-/* ══════════════════════════════════════
-   TIGER EYE / SUMMARY SECTIONS
-   Background: #F4EFE6
-   ══════════════════════════════════════ */
+/*  */
 .tigerSummarySection {
   background: var(--temple-ivory);
   padding: 52px 20px 44px;
@@ -767,12 +759,10 @@
   font-family: 'Canela', Cormorant, serif;
 }
 
-/* ══════════════════════════════════════
-   KNOWLEDGE DEEP DIVE
-   ══════════════════════════════════════ */
+/*  */
 .tigerKnowledgeSection {
   background-color: var(--temple-ivory);
-  padding: 69px 20px 52px;
+  padding: 69px 20px 52px;      /* +15% whitespace */
   border-top: 1px solid rgba(198, 161, 74, 0.12);
 }
 
@@ -800,7 +790,7 @@
 .tigerKnowledgeTitle {
   font-size: 30px;
   font-weight: 400;
-  color: var(--deep-sacred-green);
+  color: #E07B39;
   margin-bottom: 20px;
   font-family: 'Canela', Cormorant, serif;
   letter-spacing: -0.2px;
@@ -816,16 +806,16 @@
 
 .tigerKnowledgeCard {
   background: #FEFCF8;
-  border-radius: 20px;
-  border: 1px solid rgba(198, 161, 74, 0.18);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
-  padding: 28px 24px 24px;
+  border-radius: 20px;          /* PDF: 20–24px */
+  border: 1px solid rgba(198, 161, 74, 0.18);       /* PDF: subtle gold divider */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);       /* PDF: no heavy shadows */
+  padding: 28px 24px 24px;      /* PDF: +15% whitespace */
 }
 
 .tigerKnowledgeCardTitle {
   font-size: 16px;
   font-weight: 600;
-  color: var(--deep-sacred-green);
+  color: #E07B39;
   margin-bottom: 18px;
   letter-spacing: 0.02em;
   font-family: 'Neue Haas Grotesk', Inter, sans-serif;
@@ -846,6 +836,7 @@
   margin-bottom: 12px;
   font-family: 'Canela', Cormorant, serif;
   font-size: 15px;
+  /* PDF: subtle gold divider between items */
   padding-bottom: 12px;
   border-bottom: 1px solid rgba(198, 161, 74, 0.08);
 }
@@ -863,9 +854,89 @@
   font-size: 13px;
 }
 
-/* ══════════════════════════════════════
-   RESPONSIVE
-   ══════════════════════════════════════ */
+/*  */
+.gitaFullWidthSection {
+  background: var(--near-black);
+  padding: 56px 0 64px;
+}
+
+.gitaFullWidthInner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 52px 48px 48px;      /* PDF: +15% whitespace */
+  border-radius: 24px;
+  background: #f4dafe;
+  text-align: center;
+  /* PDF: subtle gold divider line at top */
+  border-top: 2px solid rgba(212, 175, 55, 0.3);
+}
+
+.gitaFullWidthQuoteMark {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: var(--royal-purple);
+  font-family: 'Canela', Cormorant, serif;
+}
+
+.gitaFullWidthText {
+  font-size: 22px;
+  line-height: 1.7;
+  font-family: 'Canela', Cormorant, serif;
+  color: #261933;
+  max-width: 1000px;
+  margin: 0 auto 32px;
+  font-weight: 400;
+}
+
+.gitaFullWidthMeta {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #5b4675;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  font-family: 'Neue Haas Grotesk', Inter, sans-serif;
+}
+
+.gitaFullWidthRef {
+  font-weight: 700;
+}
+
+.gitaFullWidthSub {
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+/* */
+.topContextSection {
+  background: var(--temple-ivory);
+  padding: 44px 20px 32px;
+  border-top: 1px solid rgba(198, 161, 74, 0.1);
+  border-bottom: 1px solid rgba(198, 161, 74, 0.08);
+}
+
+.topContextHeading {
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+  color: var(--deep-sacred-green);
+  margin-bottom: 12px;
+  font-family: 'Canela', Cormorant, serif;
+}
+
+.topContextText {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--muted-body);
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Canela', Cormorant, serif;
+}
+
+/* */
 @media (max-width: 1400px) {
   .container {
     padding: 0 180px;
@@ -918,6 +989,12 @@
   .tigerKnowledgeCard {
     max-width: 420px;
     margin: 0 auto;
+  }
+  .gitaFullWidthInner {
+    padding: 44px 32px 36px;
+  }
+  .gitaFullWidthText {
+    font-size: 19px;
   }
 }
 
@@ -984,6 +1061,12 @@
   }
   .sacredCollectionSection {
     padding: 48px 16px;
+  }
+  .gitaFullWidthInner {
+    padding: 36px 20px 28px;
+  }
+  .gitaFullWidthText {
+    font-size: 17px;
   }
 }
 

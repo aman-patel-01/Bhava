@@ -20,6 +20,17 @@ body {
 /* ── Headings default to primary (Canela) ────────────────── */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-primary);
+  color: #E07B39;
+}
+
+/* Apply brand color to common title classes when used on heading elements.
+   Element+attribute selectors give higher specificity so these rules
+   override simple class selectors in module CSS (without touching Navbar). */
+h1[class*="title"], h2[class*="title"], h3[class*="title"],
+h1[class*="titleAccent"], h2[class*="titleAccent"],
+h1[class*="pageTitle"], h2[class*="pageTitle"],
+h1[class*="sectionTitle"], h2[class*="sectionTitle"] {
+  color: #E07B39;
 }
 
 #root {
