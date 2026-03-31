@@ -176,7 +176,7 @@ function Knowledge() {
       <div className={styles.knowledgeHeroesSection}>
         <div className={styles.heroesLeft}>
           <h1 className={styles.knowledgeMainTitles}>
-            <span style={{ color: '#4A0B1D' }}>Enter the Path of</span>
+            <span style={{ color: '#E07B39' }}>Enter the Path of</span>
             <br />
             <span style={{ color: "#E07B39" }}>Inner Illumination</span>
           </h1>
@@ -347,7 +347,7 @@ function Knowledge() {
         <div className={styles.container}>
           <div className={styles.sectionGoldDivider} />
           <h2 className={styles.tigerSummaryHeading}>
-            The Civilizational Code:&nbsp;
+            <span style={{ color: '#E07B39' }}>The Civilizational Code:&nbsp;</span>
             <span style={{ fontWeight: 800, fontSize: "inherit", color: "#C6A14A" }}>
               108 &amp; Tiger Eye
             </span>
@@ -368,7 +368,7 @@ function Knowledge() {
               <p className={styles.tigerKnowledgeEyebrow}>Sacred Strategy</p>
               <h2
                 className={styles.tigerKnowledgeTitle}
-                style={{ fontWeight: 800, fontSize: "2.2rem", color: "#4A0B1D" }}
+                style={{ fontWeight: 800, fontSize: "2.2rem", color: "#E07B39" }}
               >
                 Why 108 and Tiger Eye Are the Ultimate Spiritual Power Pair
               </h2>
