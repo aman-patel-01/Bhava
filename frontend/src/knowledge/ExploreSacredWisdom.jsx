@@ -73,6 +73,7 @@ function WisdomFlipCard({ category, width, navigate }) {
   return (
     <div
       className={styles.wisdomCardOuter}
+      data-scroll-id={`knowledge-${category.id}`}
       style={width ? { flex: `0 0 ${width}px`, width } : {}}
       onMouseEnter={() => setFlipped(true)}
       onMouseLeave={() => setFlipped(false)}
@@ -96,7 +97,7 @@ function WisdomFlipCard({ category, width, navigate }) {
             <p className={styles.wisdomFrontDesc}>{category.description}</p>
             <button
               className={styles.wisdomFrontBtn}
-              onClick={() => { document.documentElement.style.scrollBehavior = "auto"; window.scrollTo(0, 0); navigate(category.route); }}
+              onClick={() => { navigate(category.route); }}
             >
               Explore More
             </button>

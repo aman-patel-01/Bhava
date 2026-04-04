@@ -36,7 +36,7 @@ function PrayersForKids() {
         </div>
       </div>
 
-      <div className={styles.track} ref={trackRef} onScroll={handleScroll}>
+      <div className={styles.track} data-scroll-container-id="prayers-kids-track" ref={trackRef} onScroll={handleScroll}>
         {kidsContent.map((item, i) => (
           <div key={i} className={styles.card}>
             <div className={styles.thumb} style={{ background: item.fallback }}>

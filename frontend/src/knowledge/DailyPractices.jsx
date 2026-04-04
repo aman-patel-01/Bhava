@@ -93,6 +93,7 @@ function DailyPractices() {
 
         <div
           className={styles.track}
+          data-scroll-container-id="daily-track"
           ref={trackRef}
           onScroll={handleScroll}
         >
@@ -100,7 +101,8 @@ function DailyPractices() {
             <div
               key={i}
               className={styles.card}
-              onClick={() => { if (p.route) { document.documentElement.style.scrollBehavior = "auto"; window.scrollTo(0, 0); navigate(p.route); } }}
+              data-scroll-id={`daily-${i}`}
+              onClick={() => { if (p.route) { navigate(p.route); } }}
               style={{ cursor: p.route ? 'pointer' : 'default' }}
             >
               <div className={styles.cardThumb}>

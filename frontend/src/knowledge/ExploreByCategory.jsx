@@ -36,7 +36,7 @@ function ExploreByCategory() {
         </div>
       </div>
 
-      <div className={styles.track} ref={trackRef} onScroll={handleScroll}>
+      <div className={styles.track} data-scroll-container-id="explore-category-track" ref={trackRef} onScroll={handleScroll}>
         {categories.map((c, i) => (
           <div key={i} className={styles.card} style={{ background: c.gradient }}>
             <div className={styles.cardBg} />

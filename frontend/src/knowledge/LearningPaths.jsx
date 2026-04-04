@@ -84,11 +84,12 @@ function LearningPaths() {
         {/* Scrollable track */}
         <div
           className={styles.track}
+          data-scroll-container-id="paths-track"
           ref={trackRef}
           onScroll={handleScroll}
         >
           {paths.map((p, i) => (
-            <div key={i} className={styles.card} onClick={() => { document.documentElement.style.scrollBehavior = "auto"; window.scrollTo(0, 0); navigate(p.route); }} style={{ cursor: "pointer" }}>
+              <div key={i} data-scroll-id={`path-${i}`} className={styles.card} onClick={() => { navigate(p.route); }} style={{ cursor: 'pointer' }}>
               <div className={styles.cardThumb} style={{ backgroundImage: `url(${p.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 <div className={styles.thumbBg} />
                 <div className={styles.thumbOverlay} />
