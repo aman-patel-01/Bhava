@@ -106,7 +106,7 @@ function LatestArticles() {
         </div>
       </div>
 
-      <div className={styles.track} ref={trackRef} onScroll={handleScroll}>
+      <div className={styles.track} data-scroll-container-id="latest-articles-track" ref={trackRef} onScroll={handleScroll}>
         {articles.map((a, i) => (
           <div key={i} className={styles.card}>
             <div

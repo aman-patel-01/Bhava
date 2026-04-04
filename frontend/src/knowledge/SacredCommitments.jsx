@@ -83,6 +83,7 @@ function SacredCommitments() {
               <div
                 key={idx}
                 className={styles.commitmentCard}
+                data-scroll-id={`commit-${idx}`}
                 style={{ "--card-color": item.color, width: cardWidth || undefined }}
               >
                 <div className={styles.commitCardLeft} style={{ background: item.color }}>
@@ -101,7 +102,7 @@ function SacredCommitments() {
                     </ul>
                     <button
                       className={styles.btnJoinChallenge}
-                      onClick={() => { if (item.route) { document.documentElement.style.scrollBehavior = "auto"; window.scrollTo(0, 0); navigate(item.route); } }}
+                      onClick={() => { if (item.route) { navigate(item.route); } }}
                     >
                       Join Challenge
                     </button>

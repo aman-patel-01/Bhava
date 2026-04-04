@@ -80,6 +80,7 @@ function SpiritualChallenges() {
 
       <div
         className={styles.challengesTrack}
+        data-scroll-container-id="challenges-track"
         ref={trackRef}
         onScroll={handleScroll}
       >

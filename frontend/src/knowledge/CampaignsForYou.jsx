@@ -78,7 +78,7 @@ function CampaignsForYou() {
         <button className={styles.seeAll}>See All →</button>
       </div>
 
-      <div className={styles.track} ref={trackRef} onScroll={handleScroll}>
+      <div className={styles.track} data-scroll-container-id="campaigns-track" ref={trackRef} onScroll={handleScroll}>
         {campaigns.map((c, i) => (
           <div key={i} className={styles.card}>
             {/* Left panel */}

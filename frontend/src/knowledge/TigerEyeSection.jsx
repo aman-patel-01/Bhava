@@ -63,7 +63,7 @@ function TigerEyeSection() {
               </p>
               <button
                 className={styles.btnPrimary}
-                onClick={() => { document.documentElement.style.scrollBehavior = "auto"; window.scrollTo(0, 0); navigate("/knowledge/tiger-eye"); }}
+                onClick={() => { navigate("/knowledge/tiger-eye"); }}
                 style={{ marginTop: "8px" }}
               >
                 Explore the Full System →

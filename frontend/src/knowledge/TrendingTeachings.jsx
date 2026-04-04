@@ -149,14 +149,16 @@ function TrendingTeachings() {
         {/* Scrollable track */}
         <div
           className={styles.trendingTrack}
+          data-scroll-container-id="trending-track"
           ref={trackRef}
           onScroll={handleScroll}
         >
           {teachings.map((t) => (
             <div
               key={t.id}
+              data-scroll-id={`trending-${t.id}`}
               className={styles.teachingCard}
-              onClick={() => { document.documentElement.style.scrollBehavior = "auto"; window.scrollTo(0, 0); navigate(t.route); }}
+              onClick={() => { navigate(t.route); }}
             >
               <div className={styles.teachingThumb}>
                 <img
