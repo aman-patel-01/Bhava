@@ -4,6 +4,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { useEffect } from "react";
 import { useLocation, useNavigationType } from "react-router-dom";
+import styles from "./Layout.module.css";
 
 function ScrollToTopOnPush() {
   const location = useLocation();
@@ -53,23 +54,7 @@ function Layout() {
     <>
       {!isAdminRoute && (
         <>
-          <div style={{
-            position: "fixed",
-            top: 28,
-            left: 20,
-            zIndex: 9999,
-            background: "#4A0B1D",
-            border: "1.5px solid #1B3A2D",
-            borderRadius: 10,
-            padding: "5px 14px",
-            fontFamily: "Inter, 'Work Sans', sans-serif",
-            fontSize: 12,
-            fontWeight: 700,
-            color: "#F4EFE6",
-            letterSpacing: 3,
-            lineHeight: 1,
-            pointerEvents: "none",
-          }}>BETA</div>
+          <div className={styles.betaTag}>BETA</div>
           <Navbar />
         </>
       )}

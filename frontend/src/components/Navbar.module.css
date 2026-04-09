@@ -393,27 +393,111 @@
   flex-shrink: 0;
 }
 
-/* Responsive */
+/* ── Hamburger ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  margin-left: auto;
+  z-index: 1100;
+}
+
+.bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #1e2d1e;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+
+/* Animate to X when open */
+.barTop  { transform: translateY(7px) rotate(45deg); }
+.barMid  { opacity: 0; transform: scaleX(0); }
+.barBot  { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── Responsive ── */
 @media (max-width: 768px) {
   .navbarContainer {
     padding: 10px 0;
   }
-  
-  .heading {
-    font-size: 20px;
+
+  .heading { font-size: 20px; }
+  .logo    { height: 32px; }
+  .dotName { width: 5px; height: 5px; }
+  .dotsBhava { gap: 3px; }
+
+  .hamburger {
+    display: flex;
   }
-  
-  .logo {
-    height: 32px;
+
+  /* Desktop col layout off on mobile */
+  .col3 { flex: 0 0 auto; max-width: none; }
+  .col9 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    /* Hidden by default */
+    display: none;
+    flex-direction: column;
+    background: #f8edde;
+    padding: 12px 0 20px;
+    border-top: 1px solid rgba(30, 45, 30, 0.08);
+    animation: slideDown 0.25s ease;
   }
-  
-  .dotName {
-    width: 7px;
-    height: 7px;
+
+  .mobileMenuOpen {
+    display: flex !important;
   }
-  
-  .dotsBhava {
-    gap: 3px;
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .nav {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0;
+    width: 100%;
+  }
+
+  .navItem {
+    width: 100%;
+  }
+
+  .navLink {
+    display: block;
+    width: 100%;
+    padding: 12px 20px !important;
+    font-size: 16px !important;
+    color: #1e2d1e !important;
+    border-bottom: 1px solid rgba(30, 45, 30, 0.06);
+  }
+
+  .navLinkActive::after {
+    display: none;
+  }
+
+  .btnGetStarted {
+    margin: 16px 20px 0;
+    width: calc(100% - 40px);
+    text-align: center;
+    font-size: 15px;
+    padding: 12px 0;
+  }
+
+  .userMenu {
+    margin: 16px 20px 0;
+  }
+
+  .cartIconBtn {
+    margin: 0 20px;
   }
 }
 

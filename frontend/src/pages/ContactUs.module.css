@@ -239,49 +239,31 @@
 
 /* ── Submit button ── */
 .sendBtn {
-  background: transparent;
-  border: 2px solid #e07b39;
-  color: #e07b39;
+  background: #4A0B1D;
+  color: #f8edde;
+  border: 2px solid #1e2d1e;
   padding: 10px 36px;
   border-radius: 999px;
-  font-size: 0.9rem;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  font-family: inherit;
-  letter-spacing: 0.5px;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+  font-family: 'Neue Haas Grotesk', Inter, sans-serif;
+  letter-spacing: 0.3px;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
   margin-top: 4px;
   align-self: flex-start;
 }
 
-.sendBtn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #e07b39 0%, #d06b29 100%);
-  transition: width 0.4s ease;
-  z-index: 0;
-}
-
-.sendBtn:hover::before {
-  width: 100%;
-}
-
 .sendBtn:hover {
-  color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(224, 123, 57, 0.28);
+  background: transparent;
+  color: #1e2d1e;
+  transform: translateY(-1px);
 }
 
-.sendBtn span,
-.sendBtn {
-  position: relative;
-  z-index: 1;
+.sendBtn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
 }
 
 /* ── Success state ── */

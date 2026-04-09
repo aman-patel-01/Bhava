@@ -46,7 +46,7 @@
 }
 
 .card {
-  background-color: #093c2d;
+  background-color: #4A0B1D;
   border: 1px solid #10100f44;
   border-radius: 12px;
   padding: 32px 24px;
@@ -89,7 +89,7 @@
 }
 
 .jobCard {
-  background-color: #093c2d;
+  background-color: #4A0B1D;
   border: 1px solid #c9a84c44;
   border-radius: 12px;
   padding: 24px;
@@ -128,22 +128,21 @@
 
 /* Button — match Navbar "Get Started" styling */
 .applyBtn {
-  background: #4A0B1D;
-  color: #f8edde;
-  border: 2px solid #1e2d1e;
+  background: #E07B39;
+  color: #ffffff;
+  border: 2px solid #E07B39;
   padding: 8px 23px;
   border-radius: 999px;
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
   font-family: 'Neue Haas Grotesk', Inter, sans-serif;
 }
 
 .applyBtn:hover {
-  background: transparent;
-  color: #4A0B1D;
-  border-color: #4A0B1D;
+  background: #c86020;
+  border-color: #c86020;
+  color: #ffffff;
   transform: translateY(-1px);
-  box-shadow: none;
 }

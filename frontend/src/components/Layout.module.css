@@ -1,0 +1,31 @@
+/* BETA tag — desktop (original styling) */
+.betaTag {
+  position: fixed;
+  top: 28px;
+  left: 20px;
+  z-index: 9999;
+  background: #4A0B1D;
+  border: 1.5px solid #1B3A2D;
+  border-radius: 10px;
+  padding: 5px 14px;
+  font-family: Inter, 'Work Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #F4EFE6;
+  letter-spacing: 3px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* Mobile — smaller and shifted down so it doesn't overlap BHAVA */
+@media (max-width: 768px) {
+  .betaTag {
+    top: 36px;
+    left: 12px;
+    font-size: 9px;
+    padding: 3px 7px;
+    border-radius: 6px;
+    border-width: 1px;
+    letter-spacing: 2px;
+  }
+}

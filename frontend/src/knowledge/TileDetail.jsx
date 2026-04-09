@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import styles from "./TileDetail.module.css"; // You can create this or use existing styles
+import styles from "./TileDetail.module.css";
 
 const TileDetail = () => {
   const { id } = useParams();
@@ -35,78 +35,87 @@ const TileDetail = () => {
     }
   };
 
-  if (loading) return <div className={styles.loading}>Loading...</div>;
+  if (loading) return <div className={styles.notFound}><div>Loading...</div></div>;
   if (error) return (
-    <div className={styles.error}>
-      <p className={styles.errorText}>{error}</p>
-      <button className={styles.backButton} onClick={() => navigate("/knowledge")}>← Back to Knowledge</button>
+    <div className={styles.notFound}>
+      <p>{error}</p>
+      <button className={styles.backBtn} onClick={() => navigate("/knowledge")}>← Back to Knowledge</button>
     </div>
   );
   if (!tile) return (
     <div className={styles.notFound}>
       <p>Tile not found</p>
-      <button className={styles.backButton} onClick={() => navigate("/knowledge")}>← Back to Knowledge</button>
+      <button className={styles.backBtn} onClick={() => navigate("/knowledge")}>← Back to Knowledge</button>
     </div>
   );
 
   return (
-    <div className={styles.container}>
-      <button className={styles.backButton} onClick={() => navigate(-1)}>
-        ← Back
-      </button>
+    <div className={styles.detailPage}>
+      {/* Hero Section */}
+      <div className={styles.detailHero}>
+        <div className={styles.heroContent}>
+          <button className={styles.backBtn} onClick={() => navigate(-1)}>
+            ← Back
+          </button>
 
-      {tile.imageUrl && (
-        <img
-          src={tile.imageUrl.startsWith('http') ? tile.imageUrl : `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${tile.imageUrl}`}
-          alt={tile.title}
-          className={styles.image}
-        />
-      )}
+          {tile.category && <div className={styles.heroSub}>{tile.category}</div>}
+          <h1 className={styles.heroTitle}>{tile.title}</h1>
+          {tile.subtitle && <p className={styles.heroTeacher}>{tile.subtitle}</p>}
 
-      <h1 className={styles.title}>{tile.title}</h1>
-      {tile.subtitle && <p className={styles.subtitle}>{tile.subtitle}</p>}
-
-      <div className={styles.meta}>
-        {tile.duration && <span className={styles.metaItem}>⏱️ {tile.duration}</span>}
-        {tile.badgeText && <span className={styles.metaItem}>📌 {tile.badgeText}</span>}
-        {tile.category && <span className={styles.metaItem}>📂 {tile.category}</span>}
-      </div>
-
-      {tile.fullDescription && (
-        <div className={styles.description}>
-          <p>{tile.fullDescription}</p>
-        </div>
-      )}
-
-      {tile.lessons && tile.lessons.length > 0 && (
-        <div className={styles.lessonsSection}>
-          <h2 className={styles.lessonsTitle}>Sessions</h2>
-          <div className={styles.lessonsList}>
-            {tile.lessons.map((lesson) => (
-              <div key={lesson.num} className={styles.lessonItem}>
-                <span className={styles.lessonNum}>{String(lesson.num).padStart(2, "0")}</span>
-                <span className={styles.lessonTitle}>{lesson.title}</span>
-                <span className={styles.lessonDuration}>{lesson.duration}</span>
-              </div>
-            ))}
+          <div className={styles.heroMeta}>
+            {tile.duration && <span>{tile.duration}</span>}
+            {tile.badgeText && (
+              <>
+                <span className={styles.dot}>•</span>
+                <span>{tile.badgeText}</span>
+              </>
+            )}
           </div>
         </div>
-      )}
 
-      {tile.summary && !tile.fullDescription && (
-        <div className={styles.summary}>
-          <p>{tile.summary}</p>
-        </div>
-      )}
+        {tile.imageUrl && (
+          <div className={styles.heroImageWrap}>
+            <img
+              src={tile.imageUrl.startsWith('http') ? tile.imageUrl : `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${tile.imageUrl}`}
+              alt={tile.title}
+              className={styles.heroImage}
+            />
+            <div className={styles.heroOverlay}></div>
+          </div>
+        )}
+      </div>
 
-      {tile.meta && Object.keys(tile.meta).length > 0 && (
-        <div className={styles.additionalInfo}>
-          <h3>Additional Information</h3>
-          <pre>
-            {JSON.stringify(tile.meta, null, 2)}
-          </pre>
+      {/* Body Section */}
+      <div className={styles.detailBody}>
+        <div className={styles.detailContainer}>
+          {tile.fullDescription && (
+            <div className={styles.detailDescription}>
+              {tile.fullDescription}
+            </div>
+          )}
+
+          {tile.lessons && tile.lessons.length > 0 && (
+            <>
+              <h2 className={styles.lessonsHeading}>Sessions</h2>
+              <div className={styles.lessonsList}>
+                {tile.lessons.map((lesson) => (
+                  <div key={lesson.num} className={styles.lessonItem}>
+                    <span className={styles.lessonNum}>{String(lesson.num).padStart(2, "0")}</span>
+                    <span className={styles.lessonTitle}>{lesson.title}</span>
+                    <span className={styles.lessonDuration}>{lesson.duration}</span>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+
+          {tile.summary && !tile.fullDescription && (
+            <div className={styles.detailDescription}>
+              {tile.summary}
+            </div>
+          )}
         </div>
-      )}
+      </div>
     </div>
   );
 };

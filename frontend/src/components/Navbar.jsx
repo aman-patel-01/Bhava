@@ -8,6 +8,7 @@ function Navbar() {
   const location = useLocation();
   const [user, setUser] = useState(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const dropdownRef = useRef(null);
   const { itemCount } = useCart();
 
@@ -72,12 +73,24 @@ function Navbar() {
             </div>
           </div>
 
-          <div className={styles.col9}>
+          {/* Hamburger — mobile only */}
+          <button
+            className={styles.hamburger}
+            onClick={() => setMenuOpen((p) => !p)}
+            aria-label="Toggle menu"
+          >
+            <span className={`${styles.bar} ${menuOpen ? styles.barTop : ""}`} />
+            <span className={`${styles.bar} ${menuOpen ? styles.barMid : ""}`} />
+            <span className={`${styles.bar} ${menuOpen ? styles.barBot : ""}`} />
+          </button>
+
+          <div className={`${styles.col9} ${menuOpen ? styles.mobileMenuOpen : ""}`}>
             <ul className={`${styles.nav} justify-content-end align-items-center`}>
               <li className={styles.navItem}>
                 <Link
                   className={`${styles.navLink} ${isActive("/products") ? styles.navLinkActive : ""}`}
                   to="/products"
+                  onClick={() => setMenuOpen(false)}
                 >
                   Products
                 </Link>
@@ -86,22 +99,18 @@ function Navbar() {
                 <Link
                   className={`${styles.navLink} ${isActive("/knowledge") ? styles.navLinkActive : ""}`}
                   to="/knowledge"
+                  onClick={() => setMenuOpen(false)}
                 >
                   Bhakti
                 </Link>
               </li>
               <li className={styles.navItem}>
-                {/* <Link
-                  className={`${styles.navLink} ${isActive("/services") ? styles.navLinkActive : ""}`}
-                  to="/services"
-                >
-                  Services
-                </Link> */}
               </li>
               <li className={styles.navItem}>
                 <Link
                   className={`${styles.navLink} ${isActive("/app") ? styles.navLinkActive : ""}`}
                   to="/app"
+                  onClick={() => setMenuOpen(false)}
                 >
                   App
                 </Link>
@@ -221,7 +230,7 @@ function Navbar() {
                     )}
                   </div>
                 ) : (
-                  <button className={styles.btnGetStarted} onClick={() => navigate("/auth")}>
+                  <button className={styles.btnGetStarted} onClick={() => { navigate("/auth"); setMenuOpen(false); }}>
                     Get Started
                   </button>
                 )}

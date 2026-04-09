@@ -53,19 +53,6 @@ const TrendingDetail = () => {
     <div className={styles.detailPage}>
       {/* Hero Section */}
       <div className={styles.detailHero}>
-        {tile.imageUrl && (
-          <>
-            <div className={styles.heroImageWrap}>
-              <img
-                src={tile.imageUrl.startsWith('http') ? tile.imageUrl : `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${tile.imageUrl}`}
-                alt={tile.title}
-                className={styles.heroImage}
-              />
-            </div>
-            <div className={styles.heroOverlay}></div>
-          </>
-        )}
-
         <div className={styles.heroContent}>
           <button className={styles.backBtn} onClick={() => navigate(-1)}>
             ← Back
@@ -85,6 +72,17 @@ const TrendingDetail = () => {
             )}
           </div>
         </div>
+
+        {tile.imageUrl && (
+          <div className={styles.heroImageWrap}>
+            <img
+              src={tile.imageUrl.startsWith('http') ? tile.imageUrl : `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${tile.imageUrl}`}
+              alt={tile.title}
+              className={styles.heroImage}
+            />
+            <div className={styles.heroOverlay}></div>
+          </div>
+        )}
       </div>
 
       {/* Body Section */}
