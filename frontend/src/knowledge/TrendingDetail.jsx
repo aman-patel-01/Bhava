@@ -53,6 +53,21 @@ const TrendingDetail = () => {
     <div className={styles.detailPage}>
       {/* Hero Section */}
       <div className={styles.detailHero}>
+        {/* Full-width background image */}
+        {tile.imageUrl && (
+          <div className={styles.heroImageWrap}>
+            <img
+              src={tile.imageUrl.startsWith('http') ? tile.imageUrl : `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${tile.imageUrl}`}
+              alt={tile.title}
+              className={styles.heroImage}
+            />
+          </div>
+        )}
+
+        {/* Gradient overlay */}
+        <div className={styles.heroOverlay}></div>
+
+        {/* Text overlaid on the left */}
         <div className={styles.heroContent}>
           <button className={styles.backBtn} onClick={() => navigate(-1)}>
             ← Back
@@ -72,17 +87,6 @@ const TrendingDetail = () => {
             )}
           </div>
         </div>
-
-        {tile.imageUrl && (
-          <div className={styles.heroImageWrap}>
-            <img
-              src={tile.imageUrl.startsWith('http') ? tile.imageUrl : `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${tile.imageUrl}`}
-              alt={tile.title}
-              className={styles.heroImage}
-            />
-            <div className={styles.heroOverlay}></div>
-          </div>
-        )}
       </div>
 
       {/* Body Section */}
