@@ -4,7 +4,7 @@
 
 The Category Mapping system connects admin panel categories to frontend section display titles. When content is created in the admin panel with a category code, it appears on the frontend under the correct section with a mapped display title.
 
-## Category Mappings
+## Category Mapping
 
 | Admin Category     | Frontend Display Title           | Frontend Subtitle                                          |
 | ------------------ | -------------------------------- | ---------------------------------------------------------- |
