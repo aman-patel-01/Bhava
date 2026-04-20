@@ -6,12 +6,12 @@ function KnowledgeHero() {
     <div className={styles.knowledgeHeroesSection}>
       <div className={styles.heroesLeft}>
         <h1 className={styles.knowledgeMainTitles}>
-          <span style={{ color: '#4A0B1D' }}>Enter the Path of</span>
-          <br />
-          <span style={{ color: "#E07B39" }}>Inner Illumination</span>
+          <span style={{ color: '#4A0B1D' }}>The mind often feels scattered.</span>
+          <span style={{ color: '#4A0B1D' }}>A simple ritual creates stillness.</span>
+          <span style={{ color: "#E07B39" }}>Begin with Bhava.</span>
         </h1>
         <div className={styles.heroBtns}>
-          <button className={styles.btnPrimary}>Begin Your Journey</button>
+          <button className={styles.btnPrimary}>Begin with Bhava</button>
         </div>
       </div>
       <div className={styles.heroesRight}>

@@ -244,8 +244,11 @@ function SacredCollection() {
     <div className={styles.sacredCollectionSection}>
       <div className={styles.container}>
         <h1 className={styles.sectionTitle}>
-          Our Sacred <span className={styles.highlight}>Collections</span>
+          Our <span className={styles.highlight}>Collections</span>
         </h1>
+        <p className={styles.sectionSubtitle}>
+          Ritual needs the right elements. Each part has a role. Build your practice with Bhava.
+        </p>
 
         {loading && <div style={{ padding: 12, background: '#fffbe6', borderRadius: 6, marginBottom: 12 }}>Loading products...</div>}
 

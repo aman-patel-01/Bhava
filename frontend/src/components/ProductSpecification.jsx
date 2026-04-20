@@ -5,19 +5,19 @@ function ProductSpecification() {
     {
       id: 0,
       title: "Temple Blessed",
-      description: "Sourced from authentic temple partnerships with 500+ years of spiritual tradition",
+      description: "Most rituals feel disconnected today. Sourced from living temple traditions. Bring this into your daily ritual.",
       image: "/Temple Blessed.png"
     },
     {
       id: 1,
       title: "100% Authentic",
-      description: "Pure ingredients, no synthetic additives—crafted with sacred intention",
+      description: "What you use shapes your practice. Pure ingredients. No additives. Use this with intention.",
       image: "/Authetic.png"
     },
     {
       id: 2,
       title: "Premium Quality",
-      description: "Ultra-premium positioning for the devoted who value excellence",
+      description: "Ritual deserves consistency. Made with care and precision. Stay with the practice.",
       image: "/Premium Quality.png"
     }
   ];

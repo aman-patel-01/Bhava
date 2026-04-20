@@ -6,16 +6,17 @@ function SacredJourney() {
     <section className={styles.sacredJourneySection}>
       <div className={styles.sacredContent}>
         <h1 className={styles.sacredTitle}>
-          <span className={styles.titleBegin}>Begin Your </span>
-          <span className={styles.titleSacred}>Sacred Journey</span>
+          <span className={styles.titleBegin}>Most days pass without pause.</span>
+          <span className={styles.titleBegin}>A simple ritual creates clarity.</span>
+          <span className={styles.titleSacred}>Begin with Bhava.</span>
         </h1>
 
         <p className={styles.sacredDescription}>
-          Join 10K+ devotees who've already transformed their spiritual practice.
+          A simple, structured daily ritual.
         </p>
 
         <div className={styles.sacredButtons}>
-          <button className={styles.btnPreorder}>Get Started</button>
+          <button className={styles.btnPreorder}>Begin with Bhava</button>
         </div>
       </div>
     </section>

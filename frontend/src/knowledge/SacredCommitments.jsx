@@ -15,21 +15,27 @@ export const commitmentRoutes = [
 const commitments = [
   {
     title: "108-Day Mantra Sādhana",
+    description: "Discipline is built over time. A guided daily structure supports you. Commit to the practice with Bhava:",
     highlights: ["Daily guided chanting", "Sacred mantra teachings", "Community support"],
+    buttonText: "Begin the 108-Day Practice",
     color: "#470017",
     image: "/Sacred%20Commitments%20for%20the%20Disciplined%20Soul/108-Day%20Mantra%20Sadhana.png",
     route: "/knowledge/108-day-sadhana",
   },
   {
     title: "40-Day Gita Wisdom Path",
+    description: "Understanding takes time. A structured path brings clarity. Study a little each day with Bhava:",
     highlights: ["Chapter-by-chapter study", "Expert satsang sessions", "Daily reflection prompts"],
+    buttonText: "Begin the 40-Day Path",
     color: "#2B6291",
     image: "/Sacred%20Commitments%20for%20the%20Disciplined%20Soul/40%20Day%20Gita%20Wisdom%20Path.png",
     route: "/knowledge/40-day-gita-wisdom",
   },
   {
     title: "21-Day Dhyān Challenge",
+    description: "The mind rarely stays still. A guided practice creates steadiness. Sit with it daily.",
     highlights: ["Guided dhyan sessions", "Breathwork & pranayama", "Silent sitting practice"],
+    buttonText: "Begin the 21-Day Practice with Bhava",
     color: "#351751",
     image: "/Sacred%20Commitments%20for%20the%20Disciplined%20Soul/21%20Dhyan%20Challenge.png",
     route: "/knowledge/21-day-dhyan",
@@ -64,9 +70,10 @@ function SacredCommitments() {
     <section className={styles.commitmentsSection}>
       <div className={styles.commitmentsHeader}>
         <h2 className={styles.commitmentsHeading}>
-          <span className={styles.commitmentsHeadingAccent}>Sacred Commitments for</span>{" "}
-          <span className={styles.commitmentsHeadingPrimary}>the Disciplined Soul</span>
+          <span className={styles.commitmentsHeadingAccent}>Consistency builds devotion.</span>
+          <span className={styles.commitmentsHeadingPrimary}>A structured practice makes it possible.</span>
         </h2>
+        <p className={styles.commitmentsSubtitle}>Stay with Bhava.</p>
       </div>
 
       <div
@@ -104,7 +111,7 @@ function SacredCommitments() {
                       className={styles.btnJoinChallenge}
                       onClick={() => { if (item.route) { navigate(item.route); } }}
                     >
-                      Join Challenge
+                      {item.buttonText}
                     </button>
                   </div>
                 </div>
